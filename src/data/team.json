@@ -267,5 +267,21 @@
         "link": "https://twitter.com/_matteodev"
       }
     ]
+  },
+   {
+    "name": "Katherine Cole",
+    "username": "kittykat",
+    "title": "VP of Infrastructure",
+    "discordID": "911864885862883379",
+    "socials": [
+      {
+        "type": "github",
+        "link": "https://github.com/fieldofdisarray"
+      },
+      {
+        "type": "link",
+        "link": "https://bsky.app/profile/disarray.sh"
+      }
+    ]
   }
 ]
