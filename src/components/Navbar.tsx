@@ -4,9 +4,6 @@ import { classNames } from "../util/ui";
 import { useMemo } from "react";
 
 const navigation = [
-  { name: "About", href: "/about" },
-  { name: "Projects", href: "/projects" },
-  { name: "Services", href: "/services" },
   { name: "Developers", href: "https://developer.fyralabs.com" },
   { name: "Blog", href: "https://blog.fyralabs.com" },
   { name: "Merch", href: "https://shop.fyralabs.com" },
@@ -45,13 +42,13 @@ const Navbar: React.FC<{
                 </Disclosure.Button>
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-                <a className="flex shrink-0 items-center" href="/">
+                <a className="flex shrink-0 items-center gap-2" href="/">
                   <img
                     className="block h-8 w-auto drop-shadow-xl"
                     src="/logo.svg"
                     alt="Fyra Labs"
                   />
-                  <span className="sr-only">Homepage</span>
+                  <span className="font-bold text-2xl">Stack</span>
                 </a>
                 <div className="hidden sm:block ml-auto">
                   <div className="flex space-x-4">

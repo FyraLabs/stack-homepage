@@ -1,314 +1,512 @@
 ---
 import Navbar from "../components/Navbar";
 import Layout from "../layouts/Layout.astro";
-import { Icon } from "astro-icon/components";
 import SEOFragment from "../components/SEOFragment.astro";
-import team from "../data/team.json";
-import type { TeamMember } from "../util/team";
-import umPattern from "../assets/um-pattern.svg";
-import terraPattern from "../assets/terra-pattern.svg";
-import chiselOperatorPattern from "../assets/chisel-operator-pattern.svg";
-import suzyqboardPattern from "../assets/suzyqboard-pattern.svg";
-import submarinePattern from "../assets/submarine-pattern.svg";
+import StackPattern from "../assets/stack-pattern.svg";
 
 import { Image } from "astro:assets";
-import ContactForm from "../components/ContactForm.astro";
-import { Marquee } from "../components/Marquee";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
-const mastodonLinks = [
-  ...team
-    .map(
-      (member) =>
-        member.socials.filter((social) => social.type === "mastodon")[0]?.link,
-    )
-    .filter((link) => link),
-  "https://fedi.fyralabs.com/@hq",
-];
-
-const description =
-  "Empowering everyone to change their world, by bringing open source software to the masses";
+const description = "Infrastructure without breaking the bank, or your mind.";
 
 const seo = {
-  title: "Welcome to Fyra Labs",
+  title: "Fyra Stack",
   description:
     "Fyra Labs is a startup building open-source software that allows anyone to change their world. Our current focuses are on the desktop Linux ecosystem, devops, and web services.",
   url: "",
 };
+
+const vpsFeatures = [
+  "Intel Cascade Lake vCPUs",
+  "NVMe SSD storage",
+  "1 Gbps fair-use uplink",
+  "Dedicated IPv4 + /64 IPv6",
+  "Full root access",
+  "Out-of-band serial console",
+  "Ultramarine Linux integration",
+  "Cancel anytime",
+];
+
+const coloFeatures = [
+  "Up to 4U rackspace",
+  "Up to 500W power budget",
+  "1 Gbps fair-use uplink",
+  "Dedicated IPv4 + IPv6",
+  "Remote hands included",
+  "DC-MDW-MSP datacenter",
+  "24/7 physical security",
+  "Cancel anytime",
+];
 ---
 
-<Layout title="Welcome to Fyra Labs">
+<Layout title="Fyra Stack">
   <SEOFragment {...seo} slot="head" />
 
-  <!-- <img
-    class="block h-[128px] w-auto absolute left-14 top-14"
-    src="/logo.svg"
-    alt="Fyra Labs"
-  /> -->
-
-  <!-- Mastodon rel=me links -->
-  <div class="hidden" aria-hidden="true">
-    {
-      mastodonLinks.map((link) => (
-        <a href={link} rel="me">
-          {link}
-        </a>
-      ))
-    }
-  </div>
-
-  <div class="relative h-[95vh] bg-black">
+  <div class="relative h-[95vh] bg-black overflow-hidden">
     <Navbar
-      className="z-20 absolute right-0 left-0"
+      className="z-30 absolute right-0 left-0"
       pathname={Astro.url.pathname}
       forceDark
       client:load
     />
 
-    <canvas
-      id="background"
-      class="absolute top-0 left-0 right-0 bottom-0 w-full h-full"></canvas>
+    <img
+      src={StackPattern.src}
+      aria-hidden="true"
+      class="absolute top-0 left-0 right-0 bottom-0 w-full h-full object-cover opacity-50"
+    />
 
     <div
       class="bg-linear-to-b from-transparent via-transparent to-black z-10 absolute top-0 left-0 right-0 bottom-0 pointer-events-none"
     >
     </div>
     <div
-      class="m-4 mb-14 md:m-14 flex flex-col absolute bottom-0 bg-black text-gray-50 z-20"
+      class="m-4 mb-14 md:m-14 flex flex-col absolute bottom-0 md:inset-0 md:flex md:items-center md:justify-center text-gray-50 z-20"
     >
-      <h1 class="font-bold md:leading-tight text-3xl md:text-6xl">
-        Welcome to Fyra Labs
-      </h1>
-      <h2 class="md:text-lg">
-        {description}
-      </h2>
-      <div class="mt-3 flex gap-5">
-        <a
-          href="https://twitter.com/teamfyralabs"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="hover:text-violet-300 transition-all"
-          aria-label="Twitter"
+      <div class="flex flex-col w-full max-w-7xl md:px-6 lg:px-8">
+        <h1
+          class="font-bold leading-tight text-4xl md:text-6xl flex items-center gap-3"
         >
-          <Icon name="fa-brands:twitter" class="text-2xl" />
-        </a>
-        <a
-          href="https://fedi.fyralabs.com/@hq"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="hover:text-violet-300 transition-all"
-          aria-label="Mastodon"
-        >
-          <Icon name="fa-brands:mastodon" class="text-2xl" />
-        </a>
-        <a
-          href="https://github.com/fyralabs"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="hover:text-violet-300 transition-all"
-          aria-label="GitHub"
-        >
-          <Icon name="fa-brands:github" class="text-2xl" />
-        </a>
-        <a
-          href="https://fyralabs.com/discord"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="hover:text-violet-300 transition-all"
-          aria-label="Discord"
-        >
-          <Icon name="fa-brands:discord" class="text-2xl" />
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="mx-6 mt-10 mb-24">
-    <div class="mx-auto max-w-5xl flex flex-col gap-18 md:gap-36">
-      <div class="flex flex-col md:flex-row gap-6 md:gap-12 items-center">
-        <div class="flex-1">
-          <p class="text-xl md:text-3xl font-bold font-mono text-white/50 mb-3">
-            00
-          </p>
-          <h1 class="font-bold text-3xl md:text-5xl dark:opacity-[92%]">
-            Who are we?
-          </h1>
-          <p class="mt-6 text-gray-800 dark:text-gray-300">
-            Many things! A we're a team, a startup, and a community. Together,
-            we have a shared mission of bringing open source software to the
-            mass market, the everyday person. We work towards this goal by
-            building software, products, communities, organizations, governance,
-            and coalitions. Our current focus is in the Linux desktop and web
-            services space, but we take on endeavors as it furthers our goals.
-          </p>
-          <a
-            href="/about"
-            class="flex flex-row items-center gap-1 text-violet-700 dark:text-violet-300 mt-3"
-            >Read more <ArrowRightIcon className="h-4 w-4" /></a
-          >
-        </div>
-        <div class="flex-1 flex overflow-x-hidden gap-6 snap-x max-w-full">
-          <div class="hidden md:grid flex-1 gap-4 grid-cols-6">
-            {
-              (team as TeamMember[]).map((member) => (
-                <div class="size-14">
-                  <Image
-                    src={import(`../assets/people/${member.username}.webp`)}
-                    alt=""
-                    class="rounded-full bg-zinc-700 aspect-square"
-                  />
-                </div>
-              ))
-            }
-          </div>
-          <div class="md:hidden relative w-full">
-            <div
-              class="absolute left-0 top-0 bottom-0 w-24 bg-linear-to-r to-transparent from-zinc-50 dark:from-zinc-900 z-10"
-            >
-            </div>
-            <div
-              class="absolute right-0 top-0 bottom-0 w-24 bg-linear-to-l to-transparent from-zinc-50 dark:from-zinc-900 z-10"
-            >
-            </div>
-
-            <Marquee className="flex-1 grid gap-4 grid-flow-col relative">
-              {
-                (team as TeamMember[]).map((member) => (
-                  <div class="size-14">
-                    <Image
-                      src={import(`../assets/people/${member.username}.webp`)}
-                      alt=""
-                      class="rounded-full bg-zinc-700 aspect-square"
-                    />
-                  </div>
-                ))
-              }
-            </Marquee>
-          </div>
-        </div>
-      </div>
-
-      <div
-        class="flex flex-wrap flex-col md:flex-row gap-6 md:gap-12 items-center"
-      >
-        <div class="flex-1">
-          <p class="text-xl md:text-3xl font-bold font-mono text-white/50 mb-3">
-            01
-          </p>
-          <h1 class="font-bold text-3xl md:text-5xl dark:opacity-[92%]">
-            What do we do?
-          </h1>
-          <p class="mt-6 text-gray-800 dark:text-gray-300">
-            We build products that innovate past the status quo. Everything we
-            build is open source and developed with the community.
-          </p>
+          <img
+            src="/logo.svg"
+            alt="Fyra"
+            class="h-10 md:h-16 w-auto drop-shadow-xl"
+          />
+          Stack
+        </h1>
+        <p class="mt-2 text-base md:text-lg text-gray-200 max-w-md">
+          {description}
+        </p>
+        <div class="mt-4 flex gap-4">
           <a
             href="/projects"
-            class="flex flex-row items-center gap-1 text-violet-700 dark:text-violet-300 mt-3"
-            >View all projects <ArrowRightIcon className="h-4 w-4" /></a
+            class="flex flex-row items-center gap-1 text-violet-400 dark:text-violet-300"
+            >Learn more <ArrowRightIcon className="h-4 w-4" /></a
           >
         </div>
-        <div class="flex-1 grid grid-cols-6 grid-flow-row-dense gap-4">
-          <div
-            class="relative flex p-4 h-48 bg-neutral-100 dark:bg-neutral-800 hover:shadow-md transition-all rounded-2xl col-span-6"
-            style={{
-              backgroundImage: `url(${umPattern.src})`,
-              backgroundSize: "cover",
-            }}
-          >
-            <div class="mt-auto">
-              <h1 class="text-2xl font-bold dark:opacity-92">
-                Ultramarine Linux
-              </h1>
-              <h2 class="dark:opacity-92">
-                The modern operating system for what you love.
-              </h2>
-            </div>
-          </div>
-          <div
-            class="relative flex p-4 h-48 bg-neutral-100 dark:bg-neutral-800 hover:shadow-md transition-all rounded-2xl col-span-2 not-md:row-start-4 not-md:col-span-3"
-            style={{
-              backgroundImage: `url(${suzyqboardPattern.src})`,
-              backgroundSize: "cover",
-            }}
-          >
-            <div class="mt-auto">
-              <h1 class="text-2xl font-bold dark:opacity-92">SuzyQ Board</h1>
-            </div>
-          </div>
-          <div
-            class="relative flex p-4 h-48 bg-neutral-100 dark:bg-neutral-800 hover:shadow-md transition-all rounded-2xl col-span-4 not-md:col-span-6"
-            style={{
-              backgroundImage: `url(${terraPattern.src})`,
-              backgroundSize: "cover",
-            }}
-          >
-            <div class="mt-auto">
-              <h1 class="text-2xl font-bold dark:opacity-92">Terra</h1>
-              <h2 class="dark:opacity-92">
-                The missing community repository for Fedora.
-              </h2>
-            </div>
-          </div>
-          <div
-            class="relative flex p-4 h-48 bg-neutral-100 dark:bg-neutral-800 hover:shadow-md transition-all rounded-2xl col-span-4 not-md:col-span-6"
-            style={{
-              backgroundImage: `url(${chiselOperatorPattern.src})`,
-              backgroundSize: "cover",
-            }}
-          >
-            <div class="mt-auto">
-              <h1 class="text-2xl font-bold dark:opacity-92">
-                Chisel Operator
-              </h1>
-              <h2 class="dark:opacity-92">
-                The easy way to expose Kubernetes services to the internet.
-              </h2>
-            </div>
-          </div>
-          <div
-            class="relative flex p-4 h-48 bg-neutral-100 dark:bg-neutral-800 hover:shadow-md transition-all rounded-2xl col-span-2 not-md:col-span-3"
-            style={{
-              backgroundImage: `url(${submarinePattern.src})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          >
-            <div class="mt-auto z-10">
-              <h1 class="text-2xl font-bold dark:opacity-92">Submarine</h1>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="flex flex-col md:flex-row gap-6 md:gap-12 items-center">
-        <div class="flex-1">
-          <p class="text-xl md:text-3xl font-bold font-mono text-white/50 mb-3">
-            02
-          </p>
-          <h1 class="font-bold text-3xl md:text-5xl dark:opacity-[92%]">
-            Questions?
-          </h1>
-          <p class="mt-6 text-gray-800 dark:text-gray-300">
-            Need support, want to ask questions, want to contribute, or want to
-            hire us to help you? Join our Discord or send us an email!
-          </p>
-          <a
-            href="https://fyralabs.com/discord"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="flex flex-row items-center gap-1 text-violet-700 dark:text-violet-300 mt-3"
-            >Join Discord <ArrowRightIcon className="h-4 w-4" /></a
-          >
-        </div>
-        <div class="flex-1 w-full"><ContactForm /></div>
       </div>
     </div>
   </div>
 
-  <style>
-    @reference '../styles/global.css';
-  </style>
+  <div class="">
+    <!-- main section -->
+    <div class="mx-6">
+      <div class="mx-auto mt-20 max-w-5xl">
+        <div
+          class="flex flex-wrap flex-col md:flex-row gap-6 md:gap-12 items-center"
+        >
+          <div class="flex-1">
+            <h2 class="font-bold text-3xl md:text-5xl dark:opacity-[92%]">
+              We run the servers
+            </h2>
+            <h2 class="font-bold text-3xl mt-1 md:text-5xl dark:opacity-[92%]">
+              You run your stack
+            </h2>
+            <p class="mt-6 text-gray-800 dark:text-gray-300">
+              Our mission is simple: provide hosting you can trust, without
+              breaking the bank, or your mind.
+            </p>
 
-  <script src="../util/background.ts"></script>
+            <p class="mt-3 text-gray-800 dark:text-gray-300">
+              We are an infrastructure provider focused on running bare metal
+              that just works. Built from the ground up to support the open
+              source projects we love, and the communities around them.
+            </p>
+          </div>
+          <div class="flex-1 grid grid-cols-6 grid-flow-row-dense gap-4">
+            <div
+              class="relative flex p-4 h-48 bg-neutral-100 dark:bg-neutral-800 hover:shadow-md transition-all rounded-2xl col-span-4 not-md:col-span-6"
+            >
+              <div class="mt-auto">
+                <p class="text-2xl font-bold dark:opacity-92">
+                  Fast by default
+                </p>
+                <p class="dark:opacity-92">
+                  NVMe storage, 20 Gbps network, and built for speed, not
+                  marketing.
+                </p>
+              </div>
+            </div>
+            <div
+              class="relative hidden md:block flex p-4 h-48 bg-neutral-100 dark:bg-neutral-800 hover:shadow-md transition-all rounded-2xl col-span-2 not-md:col-span-6 overflow-hidden"
+              style={{
+                backgroundImage: `url(${StackPattern.src})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-neutral-100 dark:from-neutral-800 to-transparent"
+              >
+              </div>
+              <div class="mt-auto z-10">
+                <p
+                  class="text-2xl font-bold dark:opacity-92 flex items-center gap-2"
+                >
+                  <img src="/logo.svg" alt="Fyra" class="h-6 w-auto" />
+                  Stack
+                </p>
+              </div>
+            </div>
+            <div
+              class="relative flex p-4 h-48 bg-neutral-100 dark:bg-neutral-800 hover:shadow-md transition-all rounded-2xl col-span-2 not-md:row-start-4 not-md:col-span-3"
+            >
+              <div class="mt-auto">
+                <p class="text-2xl font-bold dark:opacity-92">Linux Native</p>
+              </div>
+            </div>
+            <div
+              class="relative flex p-4 h-48 bg-neutral-100 dark:bg-neutral-800 hover:shadow-md transition-all rounded-2xl col-span-4 not-md:col-span-6"
+            >
+              <div class="mt-auto">
+                <p class="text-2xl font-bold dark:opacity-92">Independent</p>
+                <p class="dark:opacity-92">
+                  No venture capital means we actually care about you.
+                </p>
+              </div>
+            </div>
+            <div
+              class="relative flex p-4 h-48 bg-neutral-100 dark:bg-neutral-800 hover:shadow-md transition-all rounded-2xl col-span-4 not-md:col-span-6"
+            >
+              <div class="mt-auto">
+                <p class="text-2xl font-bold dark:opacity-92">Real support</p>
+                <p class="dark:opacity-92">
+                  By the system engineers that actually maintain the servers.
+                </p>
+              </div>
+            </div>
+            <div
+              class="relative flex p-4 h-48 bg-neutral-100 dark:bg-neutral-800 hover:shadow-md transition-all rounded-2xl col-span-2 not-md:col-span-3"
+            >
+              <div class="mt-auto z-10">
+                <p class="text-2xl font-bold dark:opacity-92">Simple pricing</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Comparison — full-bleed dark section -->
+    <div class="text-gray-50 mt-20 px-6">
+      <div class="mx-auto max-w-5xl bg-neutral-800 p-8 rounded-2xl">
+        <h2 class="text-3xl md:text-4xl font-bold mb-2 flex items-center gap-3">
+          <img src="/logo.svg" alt="Fyra" class="h-8 md:h-10 w-auto" /> Stack, well,
+          stacks up
+        </h2>
+        <p class="text-gray-400 mb-12">
+          Compared at our entry-level plan. Your mileage may vary, but ours
+          doesn't.
+        </p>
+
+        <!-- Header row -->
+        <div class="grid grid-cols-5 gap-4 mb-6 text-sm text-gray-500">
+          <span></span>
+          <span class="font-semibold text-white flex items-center gap-1.5">
+            <img src="/logo.svg" alt="Fyra" class="h-4 w-auto" /> Stack
+          </span>
+          <span>DigitalOcean</span>
+          <span>BuyVM</span>
+          <span>Hetzner</span>
+        </div>
+
+        <!-- Data rows -->
+        {
+          [
+            {
+              label: "CPU",
+              stack: "1 vCPU",
+              a: "1 vCPU",
+              n: "1 vCPU",
+              b: "2 vCPU",
+            },
+            {
+              label: "RAM",
+              stack: "2 GB",
+              a: "2 GB",
+              n: "2 GB",
+              b: "2 GB",
+            },
+            {
+              label: "Storage",
+              stack: "40 GB NVMe",
+              a: "50 GB NVMe",
+              n: "40 GB SSD",
+              b: "40 GB NVMe",
+            },
+            {
+              label: "Bandwidth",
+              stack: "1 Gbps fair-use",
+              a: "1 Gbps, 2 TB/mo",
+              n: "Unmetered",
+              b: "1 Gbps, 1 TB/mo",
+            },
+            {
+              label: "Location",
+              stack: "Midwest, USA",
+              a: "Various",
+              n: "Various",
+              b: "Various",
+            },
+            {
+              label: "Yuri allowed",
+              stack: "✓",
+              a: "✓",
+              n: "✓",
+              b: "✗",
+            },
+            {
+              label: "Price",
+              stack: "$5/mo",
+              a: "$12/mo",
+              n: "$7/mo",
+              b: "$6/mo",
+            },
+          ].map(({ label, stack, a, n, b }) => (
+            <div class="grid grid-cols-5 gap-4 border-t border-white/10 py-5 text-sm">
+              <span class="text-gray-500">{label}</span>
+              <span
+                class={
+                  label === "Price"
+                    ? "font-bold text-violet-300"
+                    : "font-semibold text-violet-300"
+                }
+              >
+                {stack}
+              </span>
+              <span class="text-gray-300">{a}</span>
+              <span class="text-gray-300">{n}</span>
+              <span class="text-gray-300">{b}</span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Pricing -->
+    <div class="mx-6 mt-20">
+      <div class="mx-auto max-w-5xl">
+        <h2 class="text-3xl md:text-4xl font-bold mb-2">
+          Pricing that's competitive
+        </h2>
+        <p class="text-gray-500 dark:text-gray-400 mb-10">
+          Simple, flat-rate plans. No surprise fees.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- VPS card -->
+          <div class="rounded-2xl bg-neutral-100 dark:bg-neutral-800 p-8">
+            <div class="flex flex-col h-full">
+              <div class="mb-8">
+                <p class="text-sm font-semibold text-gray-400 mb-4">
+                  Virtual Private Servers
+                </p>
+                <p
+                  class="text-6xl font-bold dark:opacity-92 leading-none tabular-nums mb-2"
+                >
+                  <span
+                    class="text-3xl font-normal align-top mt-2 inline-block text-gray-400 dark:text-gray-400"
+                    >$</span
+                  >5<span
+                    class="text-2xl font-normal text-gray-400 dark:text-gray-400"
+                    >/mo</span>
+                </p>
+                <p class="text-gray-500 dark:text-gray-400 text-sm">
+                  Starting at STACK-XXS · scales to $34/mo.
+                </p>
+              </div>
+
+              <div class="w-full h-px bg-neutral-200 dark:bg-neutral-700 mb-8">
+              </div>
+
+              <ul class="flex flex-col gap-3.5">
+                {
+                  vpsFeatures.map((f) => (
+                    <li class="flex items-center gap-3 text-sm text-gray-700 dark:text-gray-300">
+                      <span class="text-violet-500 dark:text-violet-400 font-semibold shrink-0">
+                        ✓
+                      </span>
+                      {f}
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+          </div>
+
+          <!-- Colo card -->
+          <div class="rounded-2xl bg-neutral-100 dark:bg-neutral-800 p-8">
+            <div class="flex flex-col h-full">
+              <div class="mb-8">
+                <p class="text-sm font-semibold text-gray-400 mb-4">
+                  Server Colocation
+                </p>
+                <p
+                  class="text-6xl font-bold dark:opacity-92 leading-none tabular-nums mb-2"
+                >
+                  <span
+                    class="text-3xl font-normal align-top mt-2 inline-block text-gray-400 dark:text-gray-400"
+                    >$</span
+                  >50<span
+                    class="text-2xl font-normal text-gray-400 dark:text-gray-400"
+                    >/mo</span>
+                </p>
+                <p class="text-gray-500 dark:text-gray-400 text-sm">
+                  Starting at STACK-1U · scales to $200/mo.
+                </p>
+              </div>
+
+              <div class="w-full h-px bg-neutral-200 dark:bg-neutral-700 mb-8">
+              </div>
+
+              <ul class="flex flex-col gap-3.5">
+                {
+                  coloFeatures.map((f) => (
+                    <li class="flex items-center gap-3 text-sm text-gray-700 dark:text-gray-300">
+                      <span class="text-violet-500 dark:text-violet-400 font-semibold shrink-0">
+                        ✓
+                      </span>
+                      {f}
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="mx-6 mt-20">
+      <div class="mx-auto max-w-5xl">
+        <article
+          class="flex bg-neutral-100 dark:bg-neutral-800 hover:shadow-md transition-all rounded-2xl min-h-64 flex-row-reverse"
+        >
+          <div
+            class="w-1/2 hidden md:block rounded-r-2xl overflow-hidden relative"
+          >
+            <Image
+              src={StackPattern}
+              alt="Fyra Stack"
+              class="object-cover h-full w-full"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-neutral-100 dark:from-neutral-800 to-transparent"
+            >
+            </div>
+          </div>
+          <div class="px-8 py-6 flex flex-col justify-center gap-2 md:w-1/2">
+            <h2
+              class="font-bold text-3xl dark:opacity-92 flex items-center gap-2"
+            >
+              Reserve your
+              <img src="/logo.svg" alt="Fyra" class="h-7 w-auto" />
+              Stack
+            </h2>
+
+            <p class="dark:opacity-92">
+              Join the beta and get priority access to VPS and colocation,
+              reserve now for 20% off your first month.
+            </p>
+            <a
+              href="/fyra-stack"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex flex-row items-center gap-1 text-violet-700 dark:text-violet-300"
+              >Reserve now <ArrowRightIcon className="h-4 w-4" /></a
+            >
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <footer class="mx-6 mb-12 mt-20">
+      <div class="mx-auto max-w-5xl">
+        <section class="flex flex-col md:flex-row gap-12 mt-14">
+          <article class="flex-1">
+            <div class="flex items-center gap-2 mb-3">
+              <img src="/logo.svg" alt="Fyra" class="h-6 w-auto" />
+              <span class="font-bold text-lg dark:opacity-92">Stack</span>
+            </div>
+          </article>
+
+          <article class="flex-1">
+            <h2 class="font-semibold text-xl mb-2 dark:opacity-92">Contact</h2>
+            <ul class="flex flex-col gap-1">
+              <li class="flex gap-2 items-center">
+                <span class="font-semibold text-gray-600 dark:text-gray-200"
+                  >General</span
+                >
+                <a
+                  href="mailto:contact@fyralabs.com"
+                  class="ml-auto group text-gray-800 dark:text-gray-300"
+                >
+                  contact<span
+                    class="text-violet-700 dark:text-violet-300 group-hover:text-gray-800 group-hover:dark:text-gray-300 transition-all"
+                    >@fyralabs.com</span
+                  >
+                </a>
+              </li>
+              <li class="flex gap-2 items-center">
+                <span class="font-semibold text-gray-600 dark:text-gray-200"
+                  >Support</span
+                >
+                <a
+                  href="mailto:support@fyralabs.com"
+                  class="ml-auto group text-gray-800 dark:text-gray-300"
+                >
+                  support<span
+                    class="text-violet-700 dark:text-violet-300 group-hover:text-gray-800 group-hover:dark:text-gray-300 transition-all"
+                    >@fyralabs.com</span
+                  >
+                </a>
+              </li>
+              <li class="flex gap-2 items-center">
+                <span class="font-semibold text-gray-600 dark:text-gray-200"
+                  >Services</span
+                >
+                <a
+                  href="mailto:services@fyralabs.com"
+                  class="ml-auto group text-gray-800 dark:text-gray-300"
+                >
+                  services<span
+                    class="text-violet-700 dark:text-violet-300 group-hover:text-gray-800 group-hover:dark:text-gray-300 transition-all"
+                    >@fyralabs.com</span
+                  >
+                </a>
+              </li>
+            </ul>
+          </article>
+
+          <article class="flex-1">
+            <h2 class="font-semibold text-xl mb-2 dark:opacity-92">Legal</h2>
+            <ul class="flex flex-col gap-1">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-800 dark:text-gray-300 hover:text-gray-600 dark:hover:text-gray-400 transition-all"
+                  >Terms of Service</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-800 dark:text-gray-300 hover:text-gray-600 dark:hover:text-gray-400 transition-all"
+                  >Acceptable Use</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-800 dark:text-gray-300 hover:text-gray-600 dark:hover:text-gray-400 transition-all"
+                  >Privacy Statement</a
+                >
+              </li>
+            </ul>
+          </article>
+        </section>
+      </div>
+    </footer>
+  </div>
 </Layout>
