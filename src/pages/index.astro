@@ -6,6 +6,7 @@ import StackPattern from "../assets/stack-pattern.svg";
 
 import { Image } from "astro:assets";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
+import minnesota from "../assets/minnesota.png";
 
 const description = "Infrastructure without breaking the bank, or your mind.";
 
@@ -32,8 +33,8 @@ const coloFeatures = [
   "Up to 500W power budget",
   "1 Gbps fair-use uplink",
   "Dedicated IPv4 + IPv6",
-  "Remote hands included",
-  "DC-MDW-MSP datacenter",
+  "IPMI remote management",
+  "Midwest data center",
   "24/7 physical security",
   "Cancel anytime",
 ];
@@ -79,7 +80,7 @@ const coloFeatures = [
         </p>
         <div class="mt-4 flex gap-4">
           <a
-            href="/projects"
+            href="#main"
             class="flex flex-row items-center gap-1 text-violet-400 dark:text-violet-300"
             >Learn more <ArrowRightIcon className="h-4 w-4" /></a
           >
@@ -90,7 +91,7 @@ const coloFeatures = [
 
   <div class="">
     <!-- main section -->
-    <div class="mx-6">
+    <div class="mx-6" id="main">
       <div class="mx-auto mt-20 max-w-5xl">
         <div
           class="flex flex-wrap flex-col md:flex-row gap-6 md:gap-12 items-center"
@@ -309,7 +310,8 @@ const coloFeatures = [
                     >$</span
                   >5<span
                     class="text-2xl font-normal text-gray-400 dark:text-gray-400"
-                    >/mo</span>
+                    >/mo</span
+                  >
                 </p>
                 <p class="text-gray-500 dark:text-gray-400 text-sm">
                   Starting at STACK-XXS · scales to $34/mo.
@@ -349,7 +351,8 @@ const coloFeatures = [
                     >$</span
                   >50<span
                     class="text-2xl font-normal text-gray-400 dark:text-gray-400"
-                    >/mo</span>
+                    >/mo</span
+                  >
                 </p>
                 <p class="text-gray-500 dark:text-gray-400 text-sm">
                   Starting at STACK-1U · scales to $200/mo.
@@ -407,10 +410,10 @@ const coloFeatures = [
 
             <p class="dark:opacity-92">
               Join the beta and get priority access to VPS and colocation,
-              reserve now for 20% off your first month.
+              reserve now for a future discount on your first order.
             </p>
             <a
-              href="/fyra-stack"
+              href="https://forms.gle/UxvMoZZxJNfvRrBW7?ref=fyrastack.com"
               target="_blank"
               rel="noopener noreferrer"
               class="flex flex-row items-center gap-1 text-violet-700 dark:text-violet-300"
@@ -429,6 +432,11 @@ const coloFeatures = [
               <img src="/logo.svg" alt="Fyra" class="h-6 w-auto" />
               <span class="font-bold text-lg dark:opacity-92">Stack</span>
             </div>
+            <p class="text-sm text-white">&copy; 2026 Fyra Stack LLC</p>
+            <p class="text-sm text-white mt-1.5 flex items-center gap-1">
+              <Image src={minnesota} alt="Minnesota" class="h-3.5 w-auto" /> Based
+              in Minnesota
+            </p>
           </article>
 
           <article class="flex-1">
@@ -484,21 +492,21 @@ const coloFeatures = [
             <ul class="flex flex-col gap-1">
               <li>
                 <a
-                  href="#"
+                  href="mailto:legal@fyralabs.com"
                   class="text-gray-800 dark:text-gray-300 hover:text-gray-600 dark:hover:text-gray-400 transition-all"
                   >Terms of Service</a
                 >
               </li>
               <li>
                 <a
-                  href="#"
+                  href="mailto:legal@fyralabs.com"
                   class="text-gray-800 dark:text-gray-300 hover:text-gray-600 dark:hover:text-gray-400 transition-all"
                   >Acceptable Use</a
                 >
               </li>
               <li>
                 <a
-                  href="#"
+                  href="mailto:legal@fyralabs.com"
                   class="text-gray-800 dark:text-gray-300 hover:text-gray-600 dark:hover:text-gray-400 transition-all"
                   >Privacy Statement</a
                 >

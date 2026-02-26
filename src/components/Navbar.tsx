@@ -3,12 +3,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { classNames } from "../util/ui";
 import { useMemo } from "react";
 
-const navigation = [
-  { name: "Developers", href: "https://developer.fyralabs.com" },
-  { name: "Blog", href: "https://blog.fyralabs.com" },
-  { name: "Merch", href: "https://shop.fyralabs.com" },
-  { name: "Contact", href: "/contact" },
-];
+const navigation = [{ name: "Fyra Labs", href: "https://fyralabs.com" }];
 
 const Navbar: React.FC<{
   pathname: string;
