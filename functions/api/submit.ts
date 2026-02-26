@@ -47,6 +47,6 @@ export const onRequestPost: PagesFunction<Env>[] = [
         }),
       });
 
-    return Response.redirect("https://fyralabs.com/thanks", 303);
+    return Response.redirect("https://fyrastack.com/thanks", 303);
   },
 ];

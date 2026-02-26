@@ -9,21 +9,17 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://fyralabs.com",
+  site: "https://fyrastack.com",
 
   integrations: [
     icon(),
     react(),
-    sitemap({ filter: (page) => page !== "https://fyralabs.com/thanks/" }),
+    sitemap({ filter: (page) => page !== "https://fyrastack.com/thanks/" }),
     compress(),
     robotsTxt(),
   ],
 
-  redirects: {
-    // why are we not using pages redirects for this?
-    // see: https://x.com/uvdotsh/status/1825811082822517213
-    "/matrix": "https://blog.fyralabs.com/dropping-matrix/",
-  },
+  redirects: {},
 
   vite: {
     plugins: [tailwindcss()],
