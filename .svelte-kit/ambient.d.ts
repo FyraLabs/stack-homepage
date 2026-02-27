@@ -38,16 +38,16 @@
  * The above values will be the same _even if_ different values for `ENVIRONMENT` or `PUBLIC_BASE_URL` are set at runtime, as they are statically replaced in your code with their build time values.
  */
 declare module '$env/static/private' {
-	export const TERM_PROGRAM: string;
+	export const NoDefaultCurrentDirectoryInExePath: string;
+	export const CLAUDE_CODE_ENTRYPOINT: string;
 	export const NODE: string;
-	export const TERM: string;
 	export const SHELL: string;
 	export const TMPDIR: string;
 	export const HOMEBREW_REPOSITORY: string;
-	export const TERM_PROGRAM_VERSION: string;
-	export const WINDOWID: string;
+	export const CLAUDE_AGENT_SDK_VERSION: string;
 	export const npm_config_local_prefix: string;
 	export const ZSH: string;
+	export const GIT_EDITOR: string;
 	export const USER: string;
 	export const LS_COLORS: string;
 	export const COMMAND_MODE: string;
@@ -63,9 +63,10 @@ declare module '$env/static/private' {
 	export const __CFBundleIdentifier: string;
 	export const PWD: string;
 	export const npm_lifecycle_event: string;
+	export const OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE: string;
 	export const npm_package_name: string;
-	export const LANG: string;
 	export const XPC_FLAGS: string;
+	export const ANTHROPIC_API_KEY: string;
 	export const npm_package_version: string;
 	export const XPC_SERVICE_NAME: string;
 	export const SHLVL: string;
@@ -73,16 +74,14 @@ declare module '$env/static/private' {
 	export const HOMEBREW_PREFIX: string;
 	export const LOGNAME: string;
 	export const LESS: string;
-	export const ALACRITTY_WINDOW_ID: string;
-	export const ZED_TERM: string;
+	export const COREPACK_ENABLE_AUTO_PIN: string;
 	export const BUN_INSTALL: string;
 	export const npm_config_user_agent: string;
 	export const INFOPATH: string;
 	export const HOMEBREW_CELLAR: string;
+	export const CLAUDECODE: string;
 	export const npm_node_execpath: string;
-	export const COLORTERM: string;
 	export const NODE_ENV: string;
-	export const PW_EXPERIMENTAL_SERVICE_WORKER_NETWORK_EVENTS: string;
 }
 
 /**
@@ -169,16 +168,16 @@ declare module '$env/static/public' {
  */
 declare module '$env/dynamic/private' {
 	export const env: {
-		TERM_PROGRAM: string;
+		NoDefaultCurrentDirectoryInExePath: string;
+		CLAUDE_CODE_ENTRYPOINT: string;
 		NODE: string;
-		TERM: string;
 		SHELL: string;
 		TMPDIR: string;
 		HOMEBREW_REPOSITORY: string;
-		TERM_PROGRAM_VERSION: string;
-		WINDOWID: string;
+		CLAUDE_AGENT_SDK_VERSION: string;
 		npm_config_local_prefix: string;
 		ZSH: string;
+		GIT_EDITOR: string;
 		USER: string;
 		LS_COLORS: string;
 		COMMAND_MODE: string;
@@ -194,9 +193,10 @@ declare module '$env/dynamic/private' {
 		__CFBundleIdentifier: string;
 		PWD: string;
 		npm_lifecycle_event: string;
+		OTEL_EXPORTER_OTLP_METRICS_TEMPORALITY_PREFERENCE: string;
 		npm_package_name: string;
-		LANG: string;
 		XPC_FLAGS: string;
+		ANTHROPIC_API_KEY: string;
 		npm_package_version: string;
 		XPC_SERVICE_NAME: string;
 		SHLVL: string;
@@ -204,16 +204,14 @@ declare module '$env/dynamic/private' {
 		HOMEBREW_PREFIX: string;
 		LOGNAME: string;
 		LESS: string;
-		ALACRITTY_WINDOW_ID: string;
-		ZED_TERM: string;
+		COREPACK_ENABLE_AUTO_PIN: string;
 		BUN_INSTALL: string;
 		npm_config_user_agent: string;
 		INFOPATH: string;
 		HOMEBREW_CELLAR: string;
+		CLAUDECODE: string;
 		npm_node_execpath: string;
-		COLORTERM: string;
 		NODE_ENV: string;
-		PW_EXPERIMENTAL_SERVICE_WORKER_NETWORK_EVENTS: string;
 		[key: `PUBLIC_${string}`]: undefined;
 		[key: `${string}`]: string | undefined;
 	}
