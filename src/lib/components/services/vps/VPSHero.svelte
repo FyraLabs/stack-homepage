@@ -8,11 +8,13 @@
 	</div>
 
 	<div class="mx-auto max-w-4xl py-24 sm:py-32 text-center">
-		<h1 class="text-4xl font-semibold tracking-tight text-balance text-fyra-gray-50 sm:text-6xl mb-8">
-			We run the servers,<br /><span class="text-fyra-red-400">you run your stack.</span>
-		</h1>
+		<h1 class="text-4xl font-semibold tracking-tight text-balance text-fyra-gray-50  sm:text-6xl mb-2">
+		We run the servers.		</h1>
+		<h2 class="text-4xl font-semibold tracking-tight text-balance text-fyra-gray-50  sm:text-6xl mb-8">
+		<span class="text-fyra-red-400">You run your stack.</span>
+		</h2>
 		<p class="text-base text-fyra-gray-400 sm:text-lg/7 max-w-lg mx-auto">
-			We're a small team in Minnesota that runs bare metal servers and charges a fair price for them. That's the whole thing.
+  Colocation without the enterprise markup, mandatory contracts, or fees for asking questions.
 		</p>
 	</div>
 

@@ -12,7 +12,7 @@
 			Most budget providers cut corners on hardware to hit their price points, we don't.
 			</p>
 			<p class="mt-3 text-base leading-relaxed text-fyra-gray-400">
-			Powered by AMD EPYC 9004 series CPUs, OCP-compliant servers, and enterprise drives, we buy good hardware, run it efficiently, run a small focused team, don't oversell, and charge a fair price.
+			Powered by Cascade Lake series CPUs, OCP-compliant servers, and enterprise drives, we buy good hardware, run it efficiently, run a small focused team, don't oversell, and charge a fair price.
 			</p>
 			<p class="mt-3 text-base leading-relaxed text-fyra-gray-300">
 			 It's boring and it works.
@@ -44,7 +44,7 @@
 			<!-- Independent -->
 			<div class="bg-fyra-gray-900 p-8">
 				<p class="text-lg font-semibold text-fyra-gray-50">Fast by default</p>
-				<p class="mt-1.5 text-sm leading-relaxed text-fyra-gray-400">Powered by AMD EPYC 9004 CPUs that are fast, real fast.</p>
+				<p class="mt-1.5 text-sm leading-relaxed text-fyra-gray-400">Powered by Cascade Lake CPUs that are fast, real fast.</p>
 			</div>
 
 			<!-- Real support -->

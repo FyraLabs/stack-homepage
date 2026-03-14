@@ -33,12 +33,13 @@
 	</div>
 
 	<div class="mx-auto max-w-4xl py-24 sm:py-32 text-center">
-		<h1 class="text-4xl font-semibold tracking-tight text-balance text-fyra-gray-50 sm:text-6xl mb-8">
-			We run servers.<br /><span class="text-fyra-red-400">We use them too.</span>
-		</h1>
+		<h1 class="text-4xl font-semibold tracking-tight text-balance text-fyra-gray-50  sm:text-6xl mb-2">
+		We run servers.		</h1>
+		<h2 class="text-4xl font-semibold tracking-tight text-balance text-fyra-gray-50  sm:text-6xl mb-8">
+		<span class="text-fyra-red-400">We use them too.</span>
+		</h2>
 		<p class="text-base text-fyra-gray-400 sm:text-lg/7 max-w-lg mx-auto">
-			We're a small team in Minnesota that runs bare metal servers and charges a fair price for them. That's the whole thing.
-		</p>
+		We're a small team in Minnesota that runs bare metal servers and charges a fair price for them. That's the whole thing.		</p>
 	</div>
 
 	<div aria-hidden="true" class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
@@ -49,15 +50,16 @@
 	</div>
 </div>
 
+
 <!-- Stat strip -->
 <div class="grid grid-cols-2 gap-px bg-fyra-gray-800 border-b border-fyra-gray-800 md:grid-cols-4">
 	{#each [
 		{ value: 'Midwest proud',    label: 'Minnesota, USA'   },
 		{ value: 'Independent',        label: 'Self-funded by ourselves'    },
-		{ value: 'Open source',  label: 'Fyra Labs, publicly'     },
-		{ value: '$5/mo',        label: 'starting price ' },
+		{ value: 'Transparent',  label: 'a subsidiary of Fyra Labs'     },
+		{ value: 'AS402292', label: 'Our AS number'}
 	] as stat}
-		<div class="bg-fyra-gray-900 flex flex-col gap-0.5 px-6 py-5 md:px-10">
+		<div class="bg-fyra-gray-900 flex flex-col gap-0.5 px-6 py-6 md:px-10">
 			<span class="text-base font-semibold tracking-tight text-fyra-gray-50">{stat.value}</span>
 			<span class="text-[12px] text-fyra-gray-500">{stat.label}</span>
 		</div>
