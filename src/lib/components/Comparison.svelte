@@ -61,9 +61,7 @@
 				Stack, well... stacks up.
 			</h2>
 		</div>
-		<p class="mt-2 text-sm text-fyra-gray-400">
-			Compared at our entry-level plan. Your mileage may vary, but ours doesn't.
-		</p>
+		<p class="mt-2 text-sm text-fyra-gray-400">Compared at our entry-level plan.</p>
 	</div>
 
 	<!-- Table — horizontally scrollable on mobile -->

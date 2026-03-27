@@ -50,9 +50,7 @@
 		<h2 class="text-3xl font-semibold tracking-tight text-fyra-gray-50 md:text-4xl">
 			Stack, well... stacks up.
 		</h2>
-		<p class="mt-2 text-sm text-fyra-gray-400">
-			Compared at our entry-level plan. Your mileage may vary, but ours doesn't.
-		</p>
+		<p class="mt-2 text-sm text-fyra-gray-400">Compared at our entry-level plan.</p>
 	</div>
 
 	<!-- Table -->
