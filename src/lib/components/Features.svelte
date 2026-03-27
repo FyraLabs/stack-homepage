@@ -44,9 +44,9 @@
 
 			<!-- Linux Native -->
 			<div class="bg-fyra-gray-900 p-8">
-				<p class="text-lg leading-snug font-semibold text-fyra-gray-50">Linux native</p>
+				<p class="text-lg leading-snug font-semibold text-fyra-gray-50">Our stack, too</p>
 				<p class="mt-1.5 text-sm leading-relaxed text-fyra-gray-400">
-					Run Ultramarine, Debian, Alma, or whatever your stack needs.
+					Fyra Labs depends on Stack to serve millions of requests.
 				</p>
 			</div>
 
@@ -54,7 +54,7 @@
 			<div class="bg-fyra-gray-900 p-8">
 				<p class="text-lg font-semibold text-fyra-gray-50">Independent</p>
 				<p class="mt-1.5 text-sm leading-relaxed text-fyra-gray-400">
-					No venture capital means we actually care about you.
+					Built on infrastructure we own, we don't resell another provider.
 				</p>
 			</div>
 

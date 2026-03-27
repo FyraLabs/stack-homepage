@@ -84,9 +84,7 @@
 											target="_blank"
 											rel="external noopener noreferrer"
 										>
-											{link.label}{#if link.external}<span
-													class="text-[11px] leading-none text-fyra-gray-500">↗</span
-												>{/if}
+											{link.label}
 										</a>
 									{:else if !link.href.startsWith('/')}
 										<a
