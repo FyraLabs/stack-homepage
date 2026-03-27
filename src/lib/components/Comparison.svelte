@@ -12,44 +12,44 @@
 			label: 'CPU',
 			stack: '2 vCPU',
 			values: ['1 vCPU', '1 vCPU', '2 vCPU'],
-			highlight: true,
+			highlight: true
 		},
 		{
 			label: 'RAM',
 			stack: '2 GB',
 			values: ['2 GB', '2 GB', '2 GB'],
-			highlight: true,
+			highlight: true
 		},
 		{
 			label: 'Storage',
 			stack: '40 GB SSD',
 			values: ['50 GB SSD', '40 GB SSD', '40 GB SSD'],
-			highlight: true,
+			highlight: true
 		},
 		{
 			label: 'Bandwidth',
 			stack: '1 Gbps fair-use',
 			values: ['1 Gbps, 2 TB/mo', 'Unmetered', '1 Gbps, 1 TB/mo'],
-			highlight: true,
+			highlight: true
 		},
 		{
 			label: 'Location',
 			stack: 'Chicago, IL',
 			values: ['Various', 'Various', 'Various'],
-			highlight: true,
+			highlight: true
 		},
 		{
 			label: 'Yuri allowed',
 			stack: '✓',
 			values: ['✓', '✓', '✗'],
-			checkmarks: [true, true, true, false],
+			checkmarks: [true, true, true, false]
 		},
 		{
 			label: 'Price',
 			stack: '$5/mo',
 			values: ['$12/mo', '$7/mo', '$6/mo'],
-			highlight: true,
-		},
+			highlight: true
+		}
 	];
 </script>
 

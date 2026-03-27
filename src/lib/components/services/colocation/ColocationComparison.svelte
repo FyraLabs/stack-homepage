@@ -9,38 +9,38 @@
 		{
 			label: 'Entry price',
 			stack: '$50/mo',
-			values: ['$200+/mo', '$80+/mo', '$0+/mo*'],
+			values: ['$200+/mo', '$80+/mo', '$0+/mo*']
 		},
 		{
 			label: 'Bandwidth',
 			stack: '1 Gbps fair-use',
-			values: ['Extra', 'Metered', 'Consumer ISP'],
+			values: ['Extra', 'Metered', 'Consumer ISP']
 		},
 		{
 			label: 'Power redundancy',
 			stack: 'Included',
-			values: ['Depends', 'Depends', 'Depends'],
+			values: ['Depends', 'Depends', 'Depends']
 		},
 		{
 			label: 'IPMI / remote access',
 			stack: 'Included',
-			values: ['Extra cost', 'Included', 'Depends'],
+			values: ['Extra cost', 'Included', 'Depends']
 		},
 		{
 			label: 'Own your hardware',
 			stack: '✓',
-			values: ['✓', '✗', '✓'],
+			values: ['✓', '✗', '✓']
 		},
 		{
 			label: 'Physical security',
 			stack: '✓',
-			values: ['✓', '✓', '✗'],
+			values: ['✓', '✓', '✗']
 		},
 		{
 			label: 'No long contract',
 			stack: '✓',
-			values: ['✗', '✓', '✓'],
-		},
+			values: ['✗', '✓', '✓']
+		}
 	];
 </script>
 

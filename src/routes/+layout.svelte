@@ -10,13 +10,12 @@
 </svelte:head>
 
 <div class="mx-4">
-    <Nav />
+	<Nav />
 
-
-       	<div class=" max-w-6xl mx-auto border-x border-fyra-gray-800  bg-fyra-gray-900 ">
-    <div class="flex min-h-[100vh] flex-col ">
-	{@render children()}
-            </div>
-    </div>
-    <Footer />
+	<div class=" mx-auto max-w-6xl border-x border-fyra-gray-800 bg-fyra-gray-900">
+		<div class="flex min-h-[100vh] flex-col">
+			{@render children()}
+		</div>
+	</div>
+	<Footer />
 </div>

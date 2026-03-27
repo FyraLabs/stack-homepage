@@ -1,10 +1,6 @@
 import { form } from '$app/server';
 import { type } from 'arktype';
-import {
-	submitPrereserve,
-	type PrereserveResult,
-	validPlanNames
-} from '$lib/server/prereserve';
+import { submitPrereserve, type PrereserveResult, validPlanNames } from '$lib/server/prereserve';
 
 const planType = type.enumerated(...[...validPlanNames].sort());
 

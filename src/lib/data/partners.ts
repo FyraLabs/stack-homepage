@@ -5,5 +5,5 @@ export type Partner = {
 };
 
 export const partners: (Partner | null)[] = [
-	{ name: 'Yuning Liang', nickname: null, role: 'CEO · DeepComputing' },
+	{ name: 'Yuning Liang', nickname: null, role: 'CEO · DeepComputing' }
 ];

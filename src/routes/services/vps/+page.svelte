@@ -2,9 +2,8 @@
 	import VPSPlans from '$lib/components/services/vps/VPSPlans.svelte';
 	import Prereserve from '$lib/components/Prereserve.svelte';
 	import VPSHero from '$lib/components/services/vps/VPSHero.svelte';
-	import VPSComparison from '$lib/components/Comparison.svelte'
+	import VPSComparison from '$lib/components/Comparison.svelte';
 	import VPSFeatures from '$lib/components/services/vps/VPSFeatures.svelte';
-
 
 	let selectedPlan = $state('STACK-XXS');
 </script>
@@ -15,7 +14,7 @@
 
 <!-- hero -->
 <main>
-    <VPSHero/>
+	<VPSHero />
 </main>
 
 <!-- Features -->
@@ -28,4 +27,4 @@
 <VPSPlans bind:selectedPlanName={selectedPlan} />
 
 <!-- Prereserve -->
-<Prereserve selectedPlanName={selectedPlan}  />
+<Prereserve selectedPlanName={selectedPlan} />

@@ -5,8 +5,8 @@
 	let map: Map;
 
 	const datacenters: { location: LatLngTuple; name: string; details: string }[] = [
-		{ location: [44.9537, -93.0900], name: 'US-MDW-MSP',  details: 'Minnesota' },
-		{ location: [41.8781, -87.6298], name: 'US-MDW-CHI',  details: 'Illinois' },
+		{ location: [44.9537, -93.09], name: 'US-MDW-MSP', details: 'Minnesota' },
+		{ location: [41.8781, -87.6298], name: 'US-MDW-CHI', details: 'Illinois' }
 	];
 
 	const futureDatacenters: { location: LatLngTuple; name: string; details: string }[] = [];
@@ -18,8 +18,8 @@
 		await import('leaflet/dist/leaflet.css');
 
 		const getSettings = (): { center: LatLngTuple; zoom: number } => {
-			if (window.innerWidth < 640)  return { center: [43.4, -90.8], zoom: 4 };
-			return                               { center: [43.4, -90.8], zoom: 5 };
+			if (window.innerWidth < 640) return { center: [43.4, -90.8], zoom: 4 };
+			return { center: [43.4, -90.8], zoom: 5 };
 		};
 
 		const { center, zoom } = getSettings();
@@ -27,16 +27,18 @@
 		map = L.map('dc-map', { scrollWheelZoom: false }).setView(center, zoom);
 
 		L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-			maxZoom: 19,
+			attribution:
+				'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+			maxZoom: 19
 		}).addTo(map);
 
-		const makeIcon = (cls: string) => L.divIcon({
-			className: cls,
-			html: `<div class="${cls}-dot"></div>`,
-			iconSize: [30, 30],
-			iconAnchor: [15, 15],
-		});
+		const makeIcon = (cls: string) =>
+			L.divIcon({
+				className: cls,
+				html: `<div class="${cls}-dot"></div>`,
+				iconSize: [30, 30],
+				iconAnchor: [15, 15]
+			});
 
 		const activeIcon = makeIcon('dc-active');
 		const futureIcon = makeIcon('dc-future');
@@ -59,13 +61,16 @@
 	<div class="absolute top-4 left-4 z-20">
 		<p class="text-lg font-semibold text-white">Locations</p>
 	</div>
-	<div id="dc-map" class="w-full min-h-80 md:min-h-[30rem] z-10"></div>
+	<div id="dc-map" class="z-10 min-h-80 w-full md:min-h-[30rem]"></div>
 </div>
 
 <style>
-	:global(#dc-map) { background: #050505; }
+	:global(#dc-map) {
+		background: #050505;
+	}
 
-	:global(.dc-active), :global(.dc-future) {
+	:global(.dc-active),
+	:global(.dc-future) {
 		background: transparent;
 		border: none;
 	}
@@ -75,7 +80,7 @@
 		width: 14px;
 		height: 14px;
 		border-radius: 50%;
-		background: #EF6351;
+		background: #ef6351;
 		border: 2px solid #fff;
 	}
 
@@ -84,7 +89,7 @@
 		width: 14px;
 		height: 14px;
 		border-radius: 50%;
-		background: #1C1C1C;
+		background: #1c1c1c;
 		border: 2px solid #fff;
 	}
 
@@ -93,16 +98,18 @@
 		background: #121212 !important;
 		color: #fff;
 		border-radius: 2px !important;
-		border: 1px solid #1C1C1C;
+		border: 1px solid #1c1c1c;
 	}
 
-	:global(.leaflet-popup-content) { color: #fff; }
+	:global(.leaflet-popup-content) {
+		color: #fff;
+	}
 
 	:global(.leaflet-control-attribution) {
 		background: #121212 !important;
-		color: #A3A3A3 !important;
-		border-top: 1px solid #1C1C1C;
-		border-left: 1px solid #1C1C1C;
+		color: #a3a3a3 !important;
+		border-top: 1px solid #1c1c1c;
+		border-left: 1px solid #1c1c1c;
 		padding: 2px 6px !important;
 	}
 
@@ -112,13 +119,15 @@
 		margin-bottom: 10px;
 	}
 
-	:global(.leaflet-control-zoom) { border: 1px solid #1C1C1C !important; }
+	:global(.leaflet-control-zoom) {
+		border: 1px solid #1c1c1c !important;
+	}
 
 	:global(.leaflet-control-zoom-in),
 	:global(.leaflet-control-zoom-out) {
 		background: #121212 !important;
-		color: #A3A3A3 !important;
-		border: 1px solid #1C1C1C !important;
+		color: #a3a3a3 !important;
+		border: 1px solid #1c1c1c !important;
 	}
 
 	:global(.leaflet-container) {

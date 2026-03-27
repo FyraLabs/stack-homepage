@@ -3,7 +3,7 @@
 
 	const members = team.filter((m) => m !== null);
 
-	function displayName(m: typeof members[number]) {
+	function displayName(m: (typeof members)[number]) {
 		if (!m.nickname) return m.name;
 		const parts = m.name.split(' ');
 		return `${parts[0]} "${m.nickname}" ${parts.slice(1).join(' ')}`;
@@ -12,7 +12,6 @@
 
 <!-- Team -->
 <section class="border-b border-fyra-gray-800">
-
 	<!-- Header -->
 	<div class="border-b border-fyra-gray-800 px-6 py-8 md:px-10">
 		<h2 class="text-3xl font-semibold tracking-tight text-fyra-gray-50 md:text-4xl">The team.</h2>
@@ -30,7 +29,7 @@
 				/>
 				<div class="min-w-0 flex-1">
 					<p class="text-sm font-medium text-fyra-gray-50">{displayName(member)}</p>
-					<p class="text-[11px] font-medium uppercase tracking-widest text-fyra-gray-500">
+					<p class="text-[11px] font-medium tracking-widest text-fyra-gray-500 uppercase">
 						{member.role.replace(' / ', ' · ')}
 					</p>
 				</div>
@@ -39,10 +38,14 @@
 	</div>
 
 	<!-- Bottom CTA strip -->
-	<div class="flex flex-col items-start justify-between gap-4 border-t border-fyra-gray-800 px-6 py-8 sm:flex-row sm:items-center md:px-10">
+	<div
+		class="flex flex-col items-start justify-between gap-4 border-t border-fyra-gray-800 px-6 py-8 sm:flex-row sm:items-center md:px-10"
+	>
 		<div>
 			<p class="text-sm font-medium text-fyra-gray-50">We're small, on purpose.</p>
-			<p class="mt-1 text-sm text-fyra-gray-400">We live with the decisions we make. That keeps us careful.</p>
+			<p class="mt-1 text-sm text-fyra-gray-400">
+				We live with the decisions we make. That keeps us careful.
+			</p>
 		</div>
 		<a
 			href="https://github.com/FyraLabs"
@@ -53,5 +56,4 @@
 			Find us on GitHub <span aria-hidden="true">→</span>
 		</a>
 	</div>
-
 </section>
