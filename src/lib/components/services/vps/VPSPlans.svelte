@@ -80,7 +80,7 @@
 					{plan.ram}GB RAM
 					<span class="hidden md:inline">
 						<span class="px-0.5 text-fyra-red-500">•</span>
-						{plan.storage}GB NVMe
+						{plan.storage}GB SAS3 SSD
 					</span>
 				</p>
 			</div>
