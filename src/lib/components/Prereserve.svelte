@@ -183,7 +183,7 @@
 									{:else}
 										{#each vpsPlans as p (p.name)}
 											{#if p.name === plan}
-												{p.name} — ${p.price}/mo · {p.cpu} vCPU · {p.ram}GB RAM · {p.storage}GB NVMe
+												{p.name} — ${p.price}/mo · {p.cpu} vCPU · {p.ram}GB RAM · {p.storage}GB
 											{/if}
 										{/each}
 									{/if}
@@ -242,7 +242,6 @@
 														: 'text-fyra-gray-300 hover:bg-fyra-gray-700/60 hover:text-fyra-gray-100'}"
 												>
 													{p.name} — ${p.price}/mo · {p.cpu} vCPU · {p.ram}GB RAM · {p.storage}GB
-													NVMe
 												</button>
 											</li>
 										{/each}

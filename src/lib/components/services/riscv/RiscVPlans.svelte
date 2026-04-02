@@ -39,7 +39,7 @@
 			</div>
 			<div class="flex justify-between">
 				<p class="text-fyra-gray-400">Storage</p>
-				<p class="tracking-tight">{currentPlan.storage}GB NVMe</p>
+				<p class="tracking-tight">{currentPlan.storage}GB</p>
 			</div>
 			<div class="flex justify-between">
 				<p class="text-fyra-gray-400">CPU Cores</p>
@@ -88,7 +88,7 @@
 					{plan.ram}GB RAM
 					<span class="hidden md:inline">
 						<span class="px-0.5 text-fyra-red-500">•</span>
-						{plan.storage}GB NVMe
+						{plan.storage}GB
 					</span>
 				</p>
 			</div>

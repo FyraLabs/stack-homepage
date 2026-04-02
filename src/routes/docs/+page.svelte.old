@@ -49,7 +49,7 @@
 		},
 		{
 			category: 'Storage',
-			description: 'Working with NVMe disks, filesystems, and disk best practices.',
+			description: 'Working with disks, filesystems, and disk best practices.',
 			articles: [
 				{ label: 'Disk layout and partitioning',  soon: false },
 				{ label: 'Enabling periodic TRIM',        soon: false },
