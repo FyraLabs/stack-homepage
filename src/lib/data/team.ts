@@ -37,7 +37,7 @@ export const team: (TeamMember | null)[] = [
 		avatar: '/assets/people/matilde.webp'
 	},
 	{
-		name: 'Caleb',
+		name: 'Caleb Jones',
 		nickname: null,
 		role: 'Software Engineer',
 		avatar: '/assets/people/caleb.png'
