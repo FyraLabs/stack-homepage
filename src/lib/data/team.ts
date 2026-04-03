@@ -21,7 +21,7 @@ export const team: (TeamMember | null)[] = [
 	{
 		name: 'Owen Zimmerman',
 		nickname: null,
-		role: 'Director / Engineering',
+		role: 'Director / Hardware Engineering',
 		avatar: '/assets/people/owen.webp'
 	},
 	{
@@ -57,7 +57,7 @@ export const team: (TeamMember | null)[] = [
 	{
 		name: 'June Fish',
 		nickname: null,
-		role: 'Strategic Advisor',
+		role: 'Director / Software Engineering',
 		avatar: '/assets/people/june.webp'
 	},
 	{
