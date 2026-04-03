@@ -34,12 +34,12 @@
 		<span class="text-fyra-red-200">Launching April 13th, ship your servers now.</span>
 		<span class="text-fyra-red-300">→</span>
 	</a>
-	<div class="flex min-h-[100vh] flex-col">
-		{@render children()}
-	</div>
-</div>
-<div class="mx-4">
-	<Nav />
+	<div class="mx-4">
+		<Nav />
 
-	<Footer />
+		<div class="flex min-h-[100vh] flex-col">
+			{@render children()}
+		</div>
+		<Footer />
+	</div>
 </div>
