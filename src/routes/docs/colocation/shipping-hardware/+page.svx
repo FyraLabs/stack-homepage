@@ -10,9 +10,7 @@ Before your server can go live in our Chicago DC, we need to receive it at our o
 
 ## 1. Before You Ship.
 
-[Contact us](/services/colocation) before sending anything. We'll confirm your colocation slot is ready, assign you a rack unit, and give you a receive authorization number (RAN) to include with your shipment. **Shipments arriving without a RAN may be refused or delayed.**
-
-To get started, [fill out our colocation intake form](/services/colocation) or email us at [support@fyrastack.com](mailto:support@fyrastack.com).
+[Fill out this form](/services/colocation) before sending anything. We'll confirm your colocation slot is ready, assign you a rack unit, and give you a receive authorization number (RAN) to include with your shipment. **Shipments arriving without a RAN may be refused or delayed.**
 
 ---
 
