@@ -12,7 +12,7 @@ Before your server can go live in our Chicago DC, we need to receive it at our o
 
 Contact us before sending anything. We'll confirm your colocation slot is ready, assign you a rack unit, and give you a receive authorization number (RAN) to include with your shipment. **Shipments arriving without a RAN may be refused or delayed.**
 
-To get started, [fill out our colocation intake form](/services/colocation) or email Katherine Cole at [kat@fyrastack.com](mailto:kat@fyrastack.com).
+To get started, [fill out our colocation intake form](/services/colocation) or email us at [support@fyrastack.com](mailto:support@fyrastack.com).
 
 ---
 
@@ -32,18 +32,18 @@ Include your **RAN** and your **name or company name** on the outside of every b
 
 ### Use the original packaging if you have it.
 
-Original server packaging is designed for exactly this. If you still have the box and foam inserts, use them.
+Original server packaging is designed exactly for this. If you still have the box and foam inserts, use them.
 
 ### If you don't have original packaging.
 
 - Use a double-walled corrugated box sized to fit snugly around the server.
 - Wrap the server in at least 2 inches of foam or bubble wrap on all sides.
 - Fill any empty space with packing peanuts or air pillows — servers should not shift inside the box.
-- Do not ship with loose components (RAM sticks, drives) unless they are secured. Bag and tape them separately inside the box.
+- Do not ship with loose components (RAM sticks, drives), instead please bag and tape them separately inside the box.
 
 ### Rails and accessories.
 
-You must ship OEM rack rails (please don't send us generic rails) and other accessories with your server pack them in a separate box. Label it with the same RAN and mark it as a companion shipment.
+You must ship OEM rack rails (please don't send us generic rails) and other accessories with your server. Please pack them in a separate box and label it with the same RAN and mark it as a companion shipment.
 
 ---
 
