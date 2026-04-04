@@ -18,7 +18,7 @@ When we rack your server, we'll assign a dedicated IP address to your IPMI inter
 
 We use WireGuard for IPMI network access. After your server is racked:
 
-1. Email [kat@fyrastack.com](mailto:kat@fyrastack.com) to request your WireGuard config file.
+1. Email [support@fyrastack.com](mailto:support@fyrastack.com) to request your WireGuard config file.
 2. Install WireGuard on your machine: [wireguard.com/install](https://www.wireguard.com/install/)
 3. Import the config and bring the tunnel up:
 
