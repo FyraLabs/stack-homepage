@@ -29,6 +29,18 @@ export const team: (TeamMember | null)[] = [
 		nickname: null,
 		role: 'Director / Business Relations',
 		avatar: '/assets/people/bill.png'
+  },
+  {
+		name: 'Addison LeClair',
+		nickname: null,
+		role: 'Developer Relations Lead',
+		avatar: '/assets/people/addison.png'
+	},
+	{
+		name: 'June Fish',
+		nickname: null,
+		role: 'Director / Software Engineering',
+		avatar: '/assets/people/june.webp'
 	},
 	{
 		name: 'Matilde Park',
@@ -47,18 +59,18 @@ export const team: (TeamMember | null)[] = [
 		nickname: null,
 		role: 'Data Center Engineer',
 		avatar: '/assets/people/naomi.jpg'
-	},
-	{
-		name: 'Addison LeClair',
-		nickname: null,
-		role: 'Developer Relations Lead',
-		avatar: '/assets/people/addison.png'
-	},
-	{
-		name: 'June Fish',
-		nickname: null,
-		role: 'Director / Software Engineering',
-		avatar: '/assets/people/june.webp'
+  },
+  {
+    name: 'Cappy Ishihara',
+    nickname: null,
+    role: 'Software Engineer',
+    avatar: 'assets/people/cappy.webp'
+  },
+  {
+    name: 'Willow Reed',
+    nickname: 'Cypress',
+    role: 'Software Engineer',
+    avatar: 'assets/people/willow.webp'
 	},
 	{
 		name: '',
