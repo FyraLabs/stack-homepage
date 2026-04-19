@@ -33,6 +33,7 @@
         "prettier": "^3.8.2",
         "prettier-plugin-svelte": "^3.5.1",
         "prettier-plugin-tailwindcss": "^0.7.2",
+        "super-sitemap": "^1.0.12",
         "svelte": "^5.55.3",
         "svelte-check": "^4.4.6",
         "tailwindcss": "^4.2.2",
@@ -935,6 +936,8 @@
     "stubborn-utils": ["stubborn-utils@1.0.2", "", {}, "sha512-zOh9jPYI+xrNOyisSelgym4tolKTJCQd5GBhK0+0xJvcYDcwlOoxF/rnFKQ2KRZknXSG9jWAp66fwP6AxN9STg=="],
 
     "subsume": ["subsume@4.0.0", "", { "dependencies": { "escape-string-regexp": "^5.0.0", "unique-string": "^3.0.0" } }, "sha512-BWnYJElmHbYZ/zKevy+TG+SsyoFCmRPDHJbR1MzLxkPOv1Jp/4hGhVUtP98s+wZBsBsHwCXvPTP0x287/WMjGg=="],
+
+    "super-sitemap": ["super-sitemap@1.0.12", "", { "peerDependencies": { "svelte": ">=4.0.0 <6.0.0" } }, "sha512-C3gfAS1RZxL5bbZGtgnIOitMhfqAt8RmhW8AWTia6c8n9RW3Zx7f/SxVeFWZD0I1nUAx2pkxuWazVtev0Nmb5w=="],
 
     "supports-color": ["supports-color@8.1.1", "", { "dependencies": { "has-flag": "^4.0.0" } }, "sha512-MpUEN2OodtUzxvKQl72cUF7RQ5EiHsGvSsVG0ia9c5RbWGL2CI4C7EpPS8UTBIplnlzZiNuV56w+FuNxy3ty2Q=="],
 
