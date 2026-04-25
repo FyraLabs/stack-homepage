@@ -60,12 +60,12 @@
 					<div class="mt-4 flex flex-col gap-2">
 						<div class="flex items-center gap-2 text-sm text-fyra-gray-400">
 							<a
-								href="/terms-of-service"
+								href={resolve('/terms-of-service')}
 								class="transition-colors duration-100 hover:text-fyra-gray-100">Terms of Service</a
 							>
 							<span class="text-fyra-gray-600">·</span>
 							<a
-								href="/privacy-statement"
+								href={resolve('/privacy-statement')}
 								class="transition-colors duration-100 hover:text-fyra-gray-100">Privacy Statement</a
 							>
 						</div>

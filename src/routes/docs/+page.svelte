@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Icon } from '@steeze-ui/svelte-icon';
 	import { ArrowDown } from '@steeze-ui/carbon-icons';
+	import { resolve } from '$app/paths';
 
 	const steps = [
 		{
@@ -76,7 +77,7 @@
 		}
 	];
 
-	const faqs: { q: string; a: string }[] = [
+	/* const faqs: { q: string; a: string }[] = [
 		{
 			q: 'How does fair-use bandwidth work?',
 			a: 'Your server is connected to a 1 Gbps port. "Fair-use" means there\'s no hard monthly cap — we don\'t meter per-GB. We expect reasonable usage; running a public torrent seed box for months on end is not that.'
@@ -109,7 +110,7 @@
 			q: "What's the cancellation policy?",
 			a: 'Cancel anytime, no long-term contracts. We prorate to the day. No cancellation fees, no "retention specialist" to guilt-trip you through.'
 		}
-	];
+	]; */
 </script>
 
 <svelte:head>
@@ -222,7 +223,7 @@
 	<div
 		class="grid grid-cols-1 divide-y divide-fyra-gray-800 lg:grid-cols-2 lg:divide-x lg:divide-y-0"
 	>
-		{#each steps as step, i}
+		{#each steps as step, i (step.n)}
 			<div class="px-6 py-8 md:px-10 {i >= 2 ? 'lg:border-t lg:border-fyra-gray-800' : ''}">
 				<div class="flex items-start gap-4">
 					<span class="mt-0.5 shrink-0 font-mono text-xs font-medium text-fyra-red-500"
@@ -239,7 +240,7 @@
 						{/if}
 						{#if step.cta}
 							<a
-								href={step.cta.href}
+								href={resolve(step.cta.href)}
 								class="mt-4 inline-block text-sm font-medium text-fyra-red-400 transition-colors duration-100 hover:text-fyra-red-300"
 								>{step.cta.label}</a
 							>
@@ -261,14 +262,14 @@
 	</div>
 
 	<div class="grid grid-cols-1 gap-px bg-fyra-gray-800 sm:grid-cols-2 lg:grid-cols-4">
-		{#each guides as guide}
+		{#each guides as guide (guide.category)}
 			<div class="bg-fyra-gray-900 p-6">
 				<p class="text-[11px] font-medium tracking-widest text-fyra-gray-400 uppercase">
 					{guide.category}
 				</p>
 				<p class="mt-2 text-sm leading-relaxed text-fyra-gray-400">{guide.description}</p>
 				<ul class="mt-5 flex flex-col gap-2">
-					{#each guide.articles as article}
+					{#each guide.articles as article (article.label)}
 						<li class="flex items-center justify-between gap-2">
 							{#if article.soon}
 								<span class="text-sm text-fyra-gray-400">{article.label}</span>
@@ -278,7 +279,7 @@
 								>
 							{:else}
 								<a
-									href={article.href ?? '#'}
+									href={article.href ? resolve(article.href) : '#'}
 									class="text-sm text-fyra-gray-300 transition-colors duration-100 hover:text-fyra-gray-50"
 									>{article.label}</a
 								>

@@ -71,34 +71,34 @@
 
 	:global(.dc-active),
 	:global(.dc-future) {
-		background: transparent;
 		border: none;
+		background: transparent;
 	}
 
 	:global(.dc-active-dot) {
-		margin: 8px;
 		width: 14px;
 		height: 14px;
-		border-radius: 50%;
-		background: #ef6351;
 		border: 2px solid #fff;
+		border-radius: 50%;
+		margin: 8px;
+		background: #ef6351;
 	}
 
 	:global(.dc-future-dot) {
-		margin: 8px;
 		width: 14px;
 		height: 14px;
-		border-radius: 50%;
-		background: #1c1c1c;
 		border: 2px solid #fff;
+		border-radius: 50%;
+		margin: 8px;
+		background: #1c1c1c;
 	}
 
 	:global(.leaflet-popup-content-wrapper),
 	:global(.leaflet-popup-tip) {
+		border: 1px solid #1c1c1c;
+		border-radius: 2px !important;
 		background: #121212 !important;
 		color: #fff;
-		border-radius: 2px !important;
-		border: 1px solid #1c1c1c;
 	}
 
 	:global(.leaflet-popup-content) {
@@ -106,11 +106,11 @@
 	}
 
 	:global(.leaflet-control-attribution) {
-		background: #121212 !important;
-		color: #a3a3a3 !important;
+		padding: 2px 6px !important;
 		border-top: 1px solid #1c1c1c;
 		border-left: 1px solid #1c1c1c;
-		padding: 2px 6px !important;
+		background: #121212 !important;
+		color: #a3a3a3 !important;
 	}
 
 	:global(.leaflet-top) {
@@ -125,12 +125,12 @@
 
 	:global(.leaflet-control-zoom-in),
 	:global(.leaflet-control-zoom-out) {
+		border: 1px solid #1c1c1c !important;
 		background: #121212 !important;
 		color: #a3a3a3 !important;
-		border: 1px solid #1c1c1c !important;
 	}
 
 	:global(.leaflet-container) {
-		font-family: 'Satoshi-Variable', sans-serif !important;
+		font-family: Satoshi-Variable, sans-serif !important;
 	}
 </style>

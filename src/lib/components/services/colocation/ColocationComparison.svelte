@@ -3,42 +3,60 @@
 
 	const rows: {
 		label: string;
-		stack: string;
+		stack: {
+			previousPrice?: string;
+			text: string;
+		};
 		values: string[];
 	}[] = [
 		{
 			label: 'Entry price',
-			stack: '<span class="line-through text-fyra-gray-500 mr-1.5">$60</span>$50/mo',
+			stack: {
+				previousPrice: '$60',
+				text: '$50/mo'
+			},
 			values: ['$200+/mo', '$80+/mo', '$0+/mo*']
 		},
 		{
 			label: 'Bandwidth',
-			stack: '1 Gbps fair-use',
+			stack: {
+				text: '1 Gbps fair-use'
+			},
 			values: ['Extra', 'Metered', 'Consumer ISP']
 		},
 		{
 			label: 'Power redundancy',
-			stack: 'Included',
+			stack: {
+				text: 'Included'
+			},
 			values: ['Depends', 'Depends', 'Depends']
 		},
 		{
 			label: 'IPMI / remote access',
-			stack: 'Included',
+			stack: {
+				text: 'Included'
+			},
 			values: ['Extra cost', 'Included', 'Depends']
 		},
 		{
 			label: 'Own your hardware',
-			stack: '✓',
+			stack: {
+				text: '✓'
+			},
 			values: ['✓', '✗', '✓']
 		},
 		{
 			label: 'Physical security',
-			stack: '✓',
+			stack: {
+				text: '✓'
+			},
 			values: ['✓', '✓', '✗']
 		},
 		{
 			label: 'No long contract',
-			stack: '✓',
+			stack: {
+				text: '✓'
+			},
 			values: ['✗', '✓', '✓']
 		}
 	];
@@ -74,7 +92,13 @@
 				{#each rows as row (row.label)}
 					<tr>
 						<td class="px-6 py-4 text-sm text-fyra-gray-400 md:px-10">{row.label}</td>
-						<td class="px-5 py-4 text-sm font-semibold text-fyra-red-400">{@html row.stack}</td>
+						<td class="px-5 py-4 text-sm font-semibold text-fyra-red-400">
+							{#if row.stack.previousPrice}
+								<span class="mr-1.5 text-fyra-gray-500 line-through">{row.stack.previousPrice}</span
+								>
+							{/if}
+							{row.stack.text}
+						</td>
 						{#each row.values as val, i (`${row.label}-${competitors[i]}`)}
 							<td class="px-5 py-4 text-sm text-fyra-gray-300">{val}</td>
 						{/each}

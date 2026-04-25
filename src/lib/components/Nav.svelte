@@ -61,7 +61,7 @@
 
 <header class="sticky top-0 z-50 bg-fyra-gray-900 backdrop-blur-sm">
 	<a
-		href="/services/colocation"
+		href={resolve('/services/colocation')}
 		class="flex items-center justify-center gap-2 bg-fyra-red-600 px-4 py-2.5 text-center text-sm font-medium text-fyra-gray-50 transition-colors hover:bg-fyra-red-600"
 	>
 		<span class="font-semibold">Colocation is here.</span>

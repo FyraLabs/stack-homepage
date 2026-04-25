@@ -2,7 +2,8 @@
 	import { fly } from 'svelte/transition';
 	import { Icon } from '@steeze-ui/svelte-icon';
 	import { Checkmark, ChevronDown, ArrowRight } from '@steeze-ui/carbon-icons';
-	import { colocationPlans, type ColocationPlan } from '$lib/data/colocationPlans';
+	import { resolve } from '$app/paths';
+	import { colocationPlans } from '$lib/data/colocationPlans';
 	import { reserve } from '$lib/remote/colocation-reserve.remote';
 	import { page } from '$app/stores';
 
@@ -37,8 +38,6 @@
 	const SHIPPING_ADDRESS = `Fyra Stack Limited
 5206 N Damen Ave
 Chicago, IL 60625`;
-
-	const DOCS_LINK = '/docs';
 
 	const inputClass =
 		'w-full bg-fyra-gray-800 border border-fyra-gray-700 text-fyra-gray-100 placeholder:text-fyra-gray-600 text-sm px-3 py-2.5 focus:outline-none focus:border-fyra-gray-500 transition-colors duration-100 disabled:opacity-40 disabled:cursor-not-allowed';
@@ -85,7 +84,7 @@ Chicago, IL 60625`;
 							what to expect when your server arrives.
 						</p>
 						<a
-							href={DOCS_LINK}
+							href={resolve('/docs')}
 							class="mt-3 inline-flex items-center gap-2 text-sm text-fyra-red-400 transition-colors hover:text-fyra-red-300"
 						>
 							View Colocation Docs
