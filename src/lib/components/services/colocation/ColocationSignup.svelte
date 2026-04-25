@@ -59,12 +59,12 @@ Chicago, IL 60625`;
 	{#if showSuccess}
 		<div
 			transition:fly={{ y: 16, duration: 200 }}
-			class="inset-0 px-6 py-8 md:px-10 absolute z-10 border border-fyra-gray-700 bg-fyra-gray-900"
+			class="absolute inset-0 z-10 border border-fyra-gray-700 bg-fyra-gray-900 px-6 py-8 md:px-10"
 		>
 			<div class="flex h-full flex-col justify-center">
-				<div class="mb-6 gap-3 flex items-center">
+				<div class="mb-6 flex items-center gap-3">
 					<div
-						class="h-10 w-10 flex items-center justify-center rounded-full bg-fyra-red-500/20 text-fyra-red-400"
+						class="flex h-10 w-10 items-center justify-center rounded-full bg-fyra-red-500/20 text-fyra-red-400"
 					>
 						<Icon src={Checkmark} class="h-5 w-5" aria-hidden="true" />
 					</div>
@@ -85,7 +85,7 @@ Chicago, IL 60625`;
 						</p>
 						<a
 							href={resolve('/docs')}
-							class="mt-3 gap-2 text-sm inline-flex items-center text-fyra-red-400 transition-colors hover:text-fyra-red-300"
+							class="mt-3 inline-flex items-center gap-2 text-sm text-fyra-red-400 transition-colors hover:text-fyra-red-300"
 						>
 							View Colocation Docs
 							<Icon src={ArrowRight} class="h-3.5 w-3.5" aria-hidden="true" />
@@ -98,8 +98,8 @@ Chicago, IL 60625`;
 
 	<!-- Form -->
 	<div>
-		<div class="px-6 py-8 md:px-10 border-b border-fyra-gray-800">
-			<h2 class="text-3xl font-semibold tracking-tight md:text-4xl text-fyra-gray-50">
+		<div class="border-b border-fyra-gray-800 px-6 py-8 md:px-10">
+			<h2 class="text-3xl font-semibold tracking-tight text-fyra-gray-50 md:text-4xl">
 				Get started with colocation.
 			</h2>
 			<p class="mt-2 text-sm text-fyra-gray-400">
@@ -108,11 +108,11 @@ Chicago, IL 60625`;
 		</div>
 
 		<div class="px-6 py-8 md:px-10">
-			<form {...signupForm} class="gap-6 flex flex-col">
+			<form {...signupForm} class="flex flex-col gap-6">
 				<input type="hidden" name="plan" value={plan} />
 
 				<!-- Plan -->
-				<div class="gap-2 flex flex-col">
+				<div class="flex flex-col gap-2">
 					<span class={labelClass}>Plan</span>
 					<div class="relative" bind:this={planDropdownEl}>
 						<button
@@ -120,7 +120,7 @@ Chicago, IL 60625`;
 							onclick={() => {
 								planDropdownOpen = !planDropdownOpen;
 							}}
-							class="px-3 py-2.5 text-sm flex w-full items-center justify-between border border-fyra-gray-700 bg-fyra-gray-800 text-left text-fyra-gray-100 transition-colors duration-100 focus:border-fyra-gray-500 focus:outline-none disabled:cursor-not-allowed disabled:opacity-40 {planDropdownOpen
+							class="flex w-full items-center justify-between border border-fyra-gray-700 bg-fyra-gray-800 px-3 py-2.5 text-left text-sm text-fyra-gray-100 transition-colors duration-100 focus:border-fyra-gray-500 focus:outline-none disabled:cursor-not-allowed disabled:opacity-40 {planDropdownOpen
 								? 'border-fyra-gray-500'
 								: ''}"
 							aria-haspopup="listbox"
@@ -145,7 +145,7 @@ Chicago, IL 60625`;
 						{#if planDropdownOpen}
 							<ul
 								role="listbox"
-								class="right-0 left-0 max-h-64 absolute top-full z-20 mt-px overflow-y-auto border border-fyra-gray-700 bg-fyra-gray-800"
+								class="absolute top-full right-0 left-0 z-20 mt-px max-h-64 overflow-y-auto border border-fyra-gray-700 bg-fyra-gray-800"
 							>
 								{#each colocationPlans as p (p.name)}
 									<li role="option" aria-selected={plan === p.name}>
@@ -155,7 +155,7 @@ Chicago, IL 60625`;
 												plan = p.name;
 												planDropdownOpen = false;
 											}}
-											class="px-3 py-2.5 text-sm w-full text-left transition-colors duration-100 {plan ===
+											class="w-full px-3 py-2.5 text-left text-sm transition-colors duration-100 {plan ===
 											p.name
 												? 'bg-fyra-gray-700 text-fyra-gray-50'
 												: 'text-fyra-gray-300 hover:bg-fyra-gray-700/60 hover:text-fyra-gray-100'}"
@@ -173,7 +173,7 @@ Chicago, IL 60625`;
 				</div>
 
 				<!-- Name -->
-				<div class="gap-2 flex flex-col">
+				<div class="flex flex-col gap-2">
 					<label for="name" class={labelClass}>
 						Display Name<span class="tracking-normal text-fyra-red-500 normal-case">*</span>
 					</label>
@@ -192,7 +192,7 @@ Chicago, IL 60625`;
 				</div>
 
 				<!-- Email -->
-				<div class="gap-2 flex flex-col">
+				<div class="flex flex-col gap-2">
 					<label for="email" class={labelClass}>
 						Email Address<span class="tracking-normal text-fyra-red-500 normal-case">*</span>
 					</label>
@@ -215,7 +215,7 @@ Chicago, IL 60625`;
 					<button
 						type="submit"
 						disabled={submitting}
-						class="px-5 py-2.5 text-sm font-medium w-fit border border-fyra-gray-700 bg-fyra-gray-800 text-fyra-gray-50 transition-colors duration-200 hover:border-fyra-red-500 disabled:cursor-not-allowed disabled:opacity-50"
+						class="w-fit border border-fyra-gray-700 bg-fyra-gray-800 px-5 py-2.5 text-sm font-medium text-fyra-gray-50 transition-colors duration-200 hover:border-fyra-red-500 disabled:cursor-not-allowed disabled:opacity-50"
 					>
 						{#if submitting}
 							Processing...

@@ -185,7 +185,7 @@
 	<div class="bg-fyra-gray-900">
 		<div
 			bind:this={termEl}
-			class="scrollbar-none h-96 px-5 py-4 font-mono text-sm leading-relaxed overflow-y-auto"
+			class="scrollbar-none h-96 overflow-y-auto px-5 py-4 font-mono text-sm leading-relaxed"
 		>
 			{#each lines as line, i (`${line.kind}-${i}`)}
 				{#if line.kind === 'blank'}

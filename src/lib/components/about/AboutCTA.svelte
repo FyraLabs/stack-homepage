@@ -24,10 +24,10 @@
 <section class="border-b border-fyra-gray-800">
 	<!-- Header -->
 	<div
-		class="gap-6 px-6 py-8 md:px-10 flex items-end justify-between border-b border-fyra-gray-800"
+		class="flex items-end justify-between gap-6 border-b border-fyra-gray-800 px-6 py-8 md:px-10"
 	>
 		<div>
-			<h2 class="text-3xl font-semibold tracking-tight md:text-4xl text-fyra-gray-50">
+			<h2 class="text-3xl font-semibold tracking-tight text-fyra-gray-50 md:text-4xl">
 				Built by engineers, not a board.
 			</h2>
 			<p class="mt-2 text-sm text-fyra-gray-400">
@@ -36,7 +36,7 @@
 		</div>
 		<a
 			href={resolve('/about')}
-			class="text-sm font-medium shrink-0 text-fyra-red-400 transition-colors duration-100 hover:text-fyra-red-300"
+			class="shrink-0 text-sm font-medium text-fyra-red-400 transition-colors duration-100 hover:text-fyra-red-300"
 		>
 			Meet the team <span aria-hidden="true">→</span>
 		</a>
@@ -55,18 +55,18 @@
 					/>
 					<!-- Gradient for text legibility -->
 					<div
-						class="inset-0 absolute bg-gradient-to-t from-fyra-gray-950 via-fyra-gray-950/30 to-transparent"
+						class="absolute inset-0 bg-gradient-to-t from-fyra-gray-950 via-fyra-gray-950/30 to-transparent"
 					></div>
 					<!-- Red accent bar -->
 					<div
-						class="bottom-0 left-0 h-0.5 absolute w-full origin-left scale-x-0 bg-fyra-red-500 transition-transform duration-300 group-hover:scale-x-100"
+						class="absolute bottom-0 left-0 h-0.5 w-full origin-left scale-x-0 bg-fyra-red-500 transition-transform duration-300 group-hover:scale-x-100"
 					></div>
 					<!-- Info overlaid -->
-					<div class="right-0 bottom-0 left-0 p-5 pb-4 absolute">
+					<div class="absolute right-0 bottom-0 left-0 p-5 pb-4">
 						<p class="text-sm leading-snug font-semibold text-fyra-gray-50">
 							{displayName(member)}
 						</p>
-						<p class="mt-1 font-medium tracking-widest text-[11px] text-fyra-gray-500 uppercase">
+						<p class="mt-1 text-[11px] font-medium tracking-widest text-fyra-gray-500 uppercase">
 							{member.role.replace(' / ', ' · ')}
 						</p>
 					</div>

@@ -39,48 +39,48 @@
 </svelte:head>
 
 <!-- Hero -->
-<div class="px-6 pt-14 lg:px-8 relative isolate overflow-hidden border-b border-fyra-gray-800">
+<div class="relative isolate overflow-hidden border-b border-fyra-gray-800 px-6 pt-14 lg:px-8">
 	<div
 		aria-hidden="true"
-		class="inset-x-0 -top-40 blur-3xl sm:-top-80 absolute -z-10 transform-gpu overflow-hidden"
+		class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
 	>
 		<div
 			style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
-			class="w-144.5 sm:left-[calc(50%-30rem)] sm:w-288.75 relative left-[calc(50%-11rem)] aspect-1155/678 -translate-x-1/2 rotate-30 bg-linear-to-tr from-fyra-red-950 to-fyra-red-700 opacity-25"
+			class="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-fyra-red-950 to-fyra-red-700 opacity-25 sm:left-[calc(50%-30rem)] sm:w-288.75"
 		></div>
 	</div>
 
-	<div class="max-w-4xl py-24 sm:py-32 mx-auto text-center">
+	<div class="mx-auto max-w-4xl py-24 text-center sm:py-32">
 		<h1
-			class="mb-2 text-4xl font-semibold tracking-tight sm:text-6xl text-balance text-fyra-gray-50"
+			class="mb-2 text-4xl font-semibold tracking-tight text-balance text-fyra-gray-50 sm:text-6xl"
 		>
 			Cloud Infrastructure,
 		</h1>
 		<h2
-			class="mb-8 text-4xl font-semibold tracking-tight sm:text-6xl text-balance text-fyra-gray-50"
+			class="mb-8 text-4xl font-semibold tracking-tight text-balance text-fyra-gray-50 sm:text-6xl"
 		>
 			<span class="text-fyra-red-400">for the rest of us.</span>
 		</h2>
-		<p class="max-w-lg text-base sm:text-lg/7 mx-auto text-fyra-gray-400">
+		<p class="mx-auto max-w-lg text-base text-fyra-gray-400 sm:text-lg/7">
 			An open-source cloud from the folks behind Fyra Labs.
 		</p>
 	</div>
 
 	<div
 		aria-hidden="true"
-		class="inset-x-0 blur-3xl sm:top-[calc(100%-30rem)] absolute top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden"
+		class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
 	>
 		<div
 			style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
-			class="w-144.5 sm:left-[calc(50%+36rem)] sm:w-288.75 relative left-[calc(50%+3rem)] aspect-1155/678 -translate-x-1/2 bg-linear-to-tr from-fyra-red-950 to-fyra-red-700 opacity-25"
+			class="relative left-[calc(50%+3rem)] aspect-1155/678 w-144.5 -translate-x-1/2 bg-linear-to-tr from-fyra-red-950 to-fyra-red-700 opacity-25 sm:left-[calc(50%+36rem)] sm:w-288.75"
 		></div>
 	</div>
 </div>
 
 <!-- Stat strip -->
-<div class="md:grid-cols-3 grid grid-cols-1 gap-px border-b border-fyra-gray-800 bg-fyra-gray-800">
+<div class="grid grid-cols-1 gap-px border-b border-fyra-gray-800 bg-fyra-gray-800 md:grid-cols-3">
 	{#each [{ value: 'Midwest proud', label: 'Chicago, IL' }, { value: 'Independent', label: 'Backed by Fyra Labs' }, { value: 'AS402292', label: 'Since 2026' }] as stat (stat.label)}
-		<div class="gap-0.5 px-6 py-6 md:px-10 flex flex-col bg-fyra-gray-900">
+		<div class="flex flex-col gap-0.5 bg-fyra-gray-900 px-6 py-6 md:px-10">
 			<span class="text-base font-semibold tracking-tight text-fyra-gray-50">{stat.value}</span>
 			<span class="text-[12px] text-fyra-gray-500">{stat.label}</span>
 		</div>
@@ -90,10 +90,10 @@
 <!-- Mission — bento style -->
 <section class="border-b border-fyra-gray-800">
 	<div
-		class="lg:grid-cols-2 lg:divide-x lg:divide-y-0 grid grid-cols-1 divide-y divide-fyra-gray-800"
+		class="grid grid-cols-1 divide-y divide-fyra-gray-800 lg:grid-cols-2 lg:divide-x lg:divide-y-0"
 	>
 		<!-- Left: text -->
-		<div class="px-8 py-12 lg:px-10 lg:py-16 flex flex-col justify-center">
+		<div class="flex flex-col justify-center px-8 py-12 lg:px-10 lg:py-16">
 			<h2 class="text-4xl leading-tight font-semibold tracking-tight text-fyra-gray-50">
 				Why we exist.
 			</h2>
@@ -110,9 +110,9 @@
 		</div>
 
 		<!-- Right: fact bento -->
-		<div class="md:grid-cols-2 grid grid-cols-1 gap-px bg-fyra-gray-800">
-			<div class="px-8 py-8 md:col-span-2 bg-fyra-gray-900">
-				<p class="font-medium tracking-widest text-[10px] text-fyra-gray-500 uppercase">
+		<div class="grid grid-cols-1 gap-px bg-fyra-gray-800 md:grid-cols-2">
+			<div class="bg-fyra-gray-900 px-8 py-8 md:col-span-2">
+				<p class="text-[10px] font-medium tracking-widest text-fyra-gray-500 uppercase">
 					Entry price
 				</p>
 				<p class="mt-2 text-5xl font-bold tracking-tight text-fyra-gray-50">
@@ -120,13 +120,13 @@
 				</p>
 				<p class="mt-1.5 text-sm text-fyra-gray-500">STACK-XXS · that's actually what it costs.</p>
 			</div>
-			<div class="px-8 py-7 bg-fyra-gray-900">
-				<p class="font-medium tracking-widest text-[10px] text-fyra-gray-500 uppercase">Partners</p>
+			<div class="bg-fyra-gray-900 px-8 py-7">
+				<p class="text-[10px] font-medium tracking-widest text-fyra-gray-500 uppercase">Partners</p>
 				<p class="mt-2 text-2xl font-semibold text-fyra-gray-50">DeepComputing</p>
 				<p class="mt-1 text-xs text-fyra-gray-500">Yuning Liang · CEO</p>
 			</div>
-			<div class="px-8 py-7 bg-fyra-gray-900">
-				<p class="font-medium tracking-widest text-[10px] text-fyra-gray-500 uppercase">
+			<div class="bg-fyra-gray-900 px-8 py-7">
+				<p class="text-[10px] font-medium tracking-widest text-fyra-gray-500 uppercase">
 					Team size
 				</p>
 				<p class="mt-2 text-2xl font-semibold text-fyra-gray-50">{memberCount} people</p>
@@ -138,26 +138,26 @@
 
 <!-- Team -->
 <section class="">
-	<div class="px-6 py-8 md:px-10 border-b border-fyra-gray-800">
-		<h2 class="text-3xl font-semibold tracking-tight md:text-4xl text-fyra-gray-50">The team.</h2>
+	<div class="border-b border-fyra-gray-800 px-6 py-8 md:px-10">
+		<h2 class="text-3xl font-semibold tracking-tight text-fyra-gray-50 md:text-4xl">The team.</h2>
 		<p class="mt-2 text-sm text-fyra-gray-400">
 			Small, on purpose. Everyone here ships and everyone here answers the support queue.
 		</p>
 	</div>
 
-	<div class="sm:grid-cols-2 lg:grid-cols-2 grid grid-cols-1 gap-px bg-fyra-gray-800">
+	<div class="grid grid-cols-1 gap-px bg-fyra-gray-800 sm:grid-cols-2 lg:grid-cols-2">
 		{#each members as member (member.name)}
-			<div class="gap-4 px-6 py-7 md:px-10 flex items-start bg-fyra-gray-900">
+			<div class="flex items-start gap-4 bg-fyra-gray-900 px-6 py-7 md:px-10">
 				{#if member.avatar}
 					<img
 						src={member.avatar}
 						alt={member.name}
-						class="h-10 w-10 rounded-xs shrink-0 object-cover object-center brightness-90"
+						class="h-10 w-10 shrink-0 rounded-xs object-cover object-center brightness-90"
 					/>
 				{/if}
-				<div class="min-w-0 pt-0.5 flex-1">
+				<div class="min-w-0 flex-1 pt-0.5">
 					<p class="text-sm font-semibold text-fyra-gray-50">{displayName(member)}</p>
-					<p class="mt-0.5 font-medium tracking-widest text-[11px] text-fyra-gray-500 uppercase">
+					<p class="mt-0.5 text-[11px] font-medium tracking-widest text-fyra-gray-500 uppercase">
 						{member.role.replace(' / ', ' · ')}
 					</p>
 				</div>

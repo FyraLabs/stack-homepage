@@ -43,26 +43,26 @@
 
 <section class="border-b border-fyra-gray-800">
 	<!-- Header -->
-	<div class="px-6 py-8 md:px-10 border-b border-fyra-gray-800">
-		<h2 class="text-3xl font-semibold tracking-tight md:text-4xl text-fyra-gray-50">
+	<div class="border-b border-fyra-gray-800 px-6 py-8 md:px-10">
+		<h2 class="text-3xl font-semibold tracking-tight text-fyra-gray-50 md:text-4xl">
 			Priced fairly.
 		</h2>
 		<p class="mt-2 text-sm text-fyra-gray-400">Simple, flat-rate plans. No surprise fees.</p>
 	</div>
 
 	<!-- Plans -->
-	<div class="md:grid-cols-2 grid grid-cols-1 gap-px bg-fyra-gray-800">
+	<div class="grid grid-cols-1 gap-px bg-fyra-gray-800 md:grid-cols-2">
 		{#each plans as plan (plan.href)}
 			<div class="flex flex-col bg-fyra-gray-900">
 				<!-- Price block -->
 				<div
-					class="gap-4 px-6 py-8 md:px-10 flex items-end justify-between border-b border-fyra-gray-800"
+					class="flex items-end justify-between gap-4 border-b border-fyra-gray-800 px-6 py-8 md:px-10"
 				>
 					<div>
-						<p class="font-medium tracking-widest text-[11px] text-fyra-gray-400 uppercase">
+						<p class="text-[11px] font-medium tracking-widest text-fyra-gray-400 uppercase">
 							{plan.name}
 						</p>
-						<div class="mt-3 gap-1 flex items-baseline">
+						<div class="mt-3 flex items-baseline gap-1">
 							<span class="text-4xl font-bold tracking-tight text-fyra-gray-50">${plan.price}</span>
 							<span class="text-sm font-medium text-fyra-gray-400">/mo</span>
 						</div>
@@ -70,16 +70,16 @@
 					</div>
 					<a
 						href={resolve(plan.href)}
-						class="text-sm font-medium shrink-0 text-fyra-red-400 transition-colors duration-100 hover:text-fyra-red-300"
+						class="shrink-0 text-sm font-medium text-fyra-red-400 transition-colors duration-100 hover:text-fyra-red-300"
 					>
 						View plans <span aria-hidden="true">→</span>
 					</a>
 				</div>
 
 				<!-- Features -->
-				<div class="lg:grid-cols-2 grid grid-cols-1 gap-px bg-fyra-gray-800">
+				<div class="grid grid-cols-1 gap-px bg-fyra-gray-800 lg:grid-cols-2">
 					{#each plan.features as feature (feature)}
-						<div class="gap-3 px-6 py-3.5 md:px-10 flex items-center bg-fyra-gray-900">
+						<div class="flex items-center gap-3 bg-fyra-gray-900 px-6 py-3.5 md:px-10">
 							<Icon src={Checkmark} class="h-3 w-3 shrink-0 text-fyra-red-500" aria-hidden="true" />
 							<span class="text-sm text-fyra-gray-400">{feature}</span>
 						</div>

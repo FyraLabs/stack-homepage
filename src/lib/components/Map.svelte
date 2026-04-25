@@ -57,11 +57,11 @@
 	});
 </script>
 
-<div class="rounded-xs relative overflow-hidden border border-fyra-gray-700">
-	<div class="top-4 left-4 absolute z-20">
+<div class="relative overflow-hidden rounded-xs border border-fyra-gray-700">
+	<div class="absolute top-4 left-4 z-20">
 		<p class="text-lg font-semibold text-white">Locations</p>
 	</div>
-	<div id="dc-map" class="min-h-80 md:min-h-[30rem] z-10 w-full"></div>
+	<div id="dc-map" class="z-10 min-h-80 w-full md:min-h-[30rem]"></div>
 </div>
 
 <style>

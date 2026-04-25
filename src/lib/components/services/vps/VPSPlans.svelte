@@ -7,9 +7,9 @@
 </script>
 
 <!-- Header -->
-<div class="px-6 py-8 md:px-10 border-b border-fyra-gray-800">
-	<div class="gap-2.5 flex items-center">
-		<h2 class="text-3xl font-semibold tracking-tight md:text-4xl text-fyra-gray-50">
+<div class="border-b border-fyra-gray-800 px-6 py-8 md:px-10">
+	<div class="flex items-center gap-2.5">
+		<h2 class="text-3xl font-semibold tracking-tight text-fyra-gray-50 md:text-4xl">
 			Priced fairly.
 		</h2>
 	</div>
@@ -17,7 +17,7 @@
 </div>
 
 <div class="grid grid-cols-7">
-	<div class="p-5 col-span-7 flex flex-col justify-between border-b border-fyra-gray-800">
+	<div class="col-span-7 flex flex-col justify-between border-b border-fyra-gray-800 p-5">
 		<!-- top -->
 		<div class="flex min-w-full items-center justify-between">
 			<h2 class="text-xl font-semibold tracking-wide lg:text-2xl">
@@ -31,7 +31,7 @@
 		</div>
 		<!-- middle -->
 		<div
-			class="mt-8 gap-x-8 gap-y-1.5 text-base md:grid-cols-2 md:gap-y-3.5 lg:mt-16 lg:text-[1.05rem] grid grid-cols-1"
+			class="mt-8 grid grid-cols-1 gap-x-8 gap-y-1.5 text-base md:grid-cols-2 md:gap-y-3.5 lg:mt-16 lg:text-[1.05rem]"
 		>
 			<div class="flex justify-between">
 				<p class="text-fyra-gray-400">CPU</p>
@@ -55,17 +55,17 @@
 	</div>
 </div>
 
-<div class="lg:grid-cols-4 grid grid-cols-2 divide-x divide-y divide-fyra-gray-800">
+<div class="grid grid-cols-2 divide-x divide-y divide-fyra-gray-800 lg:grid-cols-4">
 	{#each vpsPlans as plan, i (plan.name)}
 		<button
 			onclick={() => (selectedPlanName = plan.name)}
-			class="p-4 col-span-1 w-full text-left duration-200 {selectedPlanName === plan.name
+			class="col-span-1 w-full p-4 text-left duration-200 {selectedPlanName === plan.name
 				? 'bg-fyra-gray-800'
 				: 'bg-fyra-gray-900 hover:bg-fyra-gray-800'} {i === vpsPlans.length - 1
 				? 'border-b border-fyra-gray-800'
 				: ''}"
 		>
-			<div class="gap-4 flex items-start justify-between">
+			<div class="flex items-start justify-between gap-4">
 				<h4 class="text-base/5 font-medium md:text-[1.1rem]/6">{plan.name}</h4>
 				<h3 class="text-sm font-medium tracking-tighter lg:text-base">
 					<span class="font-normal tracking-wide">$</span>{plan.price}<span class="text-sm"
@@ -73,12 +73,12 @@
 					>
 				</h3>
 			</div>
-			<div class="mt-4 md:mt-6 text-left">
+			<div class="mt-4 text-left md:mt-6">
 				<p class="text-xs text-fyra-gray-400">
 					{plan.cpu} vCPU
 					<span class="px-0.5 text-fyra-red-500">•</span>
 					{plan.ram}GB RAM
-					<span class="md:inline hidden">
+					<span class="hidden md:inline">
 						<span class="px-0.5 text-fyra-red-500">•</span>
 						{plan.storage}GB SAS3 SSD
 					</span>
