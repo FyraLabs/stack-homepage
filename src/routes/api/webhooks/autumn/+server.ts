@@ -1,4 +1,4 @@
-import { error, type RequestHandler } from '@sveltejs/kit';
+import type { RequestHandler } from '@sveltejs/kit';
 import { Webhook } from 'svix';
 import { env } from '$env/dynamic/private';
 

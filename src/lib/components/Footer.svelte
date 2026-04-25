@@ -44,12 +44,12 @@
 </script>
 
 <footer class="bg-fyra-gray-900">
-	<div class="mx-auto max-w-6xl border-x border-t border-fyra-gray-800">
-		<div class="] mx-auto flex max-w-5xl flex-col gap-12 py-6 lg:flex-row lg:gap-8">
+	<div class="max-w-6xl mx-auto border-x border-t border-fyra-gray-800">
+		<div class="] max-w-5xl gap-12 py-6 lg:flex-row lg:gap-8 mx-auto flex flex-col">
 			<div class="px-6">
 				<!-- Left: logo + meta -->
-				<div class="shrink-0 lg:w-72">
-					<a href={resolve('/')} class="inline-flex items-center gap-1.5">
+				<div class="lg:w-72 shrink-0">
+					<a href={resolve('/')} class="gap-1.5 inline-flex items-center">
 						<img src="/logo.svg" alt="Fyra Stack" class="h-7 w-7" />
 						<span class="text-xl font-semibold tracking-tight text-fyra-gray-50">Stack</span>
 					</a>
@@ -57,15 +57,15 @@
 					<p class="mt-4 text-sm text-fyra-gray-300">Fyra Stack Limited © {year}</p>
 					<p class="mt-0.5 mb-9 text-xs text-fyra-gray-400">5206 N Damen Ave, Chicago, IL 60625</p>
 
-					<div class="mt-4 flex flex-col gap-2">
-						<div class="flex items-center gap-2 text-sm text-fyra-gray-400">
+					<div class="mt-4 gap-2 flex flex-col">
+						<div class="gap-2 text-sm flex items-center text-fyra-gray-400">
 							<a
-								href="/terms-of-service"
+								href={resolve('/terms-of-service')}
 								class="transition-colors duration-100 hover:text-fyra-gray-100">Terms of Service</a
 							>
 							<span class="text-fyra-gray-600">·</span>
 							<a
-								href="/privacy-statement"
+								href={resolve('/privacy-statement')}
 								class="transition-colors duration-100 hover:text-fyra-gray-100">Privacy Statement</a
 							>
 						</div>
@@ -74,20 +74,20 @@
 			</div>
 
 			<!-- Divider (mobile) -->
-			<div class="border-t border-fyra-gray-800 lg:hidden"></div>
+			<div class="lg:hidden border-t border-fyra-gray-800"></div>
 
 			<!-- Right: link columns -->
-			<div class="grid grid-cols-2 gap-x-8 gap-y-10 px-6 sm:grid-cols-4 lg:flex-1">
+			<div class="gap-x-8 gap-y-10 px-6 sm:grid-cols-4 lg:flex-1 grid grid-cols-2">
 				{#each columns as col (col.heading)}
 					<div>
 						<p class="text-sm font-semibold text-fyra-gray-50">{col.heading}</p>
-						<ul class="mt-4 flex flex-col gap-2.5">
+						<ul class="mt-4 gap-2.5 flex flex-col">
 							{#each col.links as link (link.label)}
 								<li>
 									{#if link.external}
 										<a
 											href={link.href}
-											class="inline-flex items-center gap-0.5 text-sm text-fyra-gray-400 transition-colors duration-100 hover:text-fyra-gray-100"
+											class="gap-0.5 text-sm inline-flex items-center text-fyra-gray-400 transition-colors duration-100 hover:text-fyra-gray-100"
 											target="_blank"
 											rel="external noopener noreferrer"
 										>
@@ -97,14 +97,14 @@
 										<a
 											href={link.href}
 											rel="external"
-											class="inline-flex items-center gap-0.5 text-sm text-fyra-gray-400 transition-colors duration-100 hover:text-fyra-gray-100"
+											class="gap-0.5 text-sm inline-flex items-center text-fyra-gray-400 transition-colors duration-100 hover:text-fyra-gray-100"
 										>
 											{link.label}
 										</a>
 									{:else}
 										<a
 											href={resolve(link.href as InternalHref)}
-											class="inline-flex items-center gap-0.5 text-sm text-fyra-gray-400 transition-colors duration-100 hover:text-fyra-gray-100"
+											class="gap-0.5 text-sm inline-flex items-center text-fyra-gray-400 transition-colors duration-100 hover:text-fyra-gray-100"
 										>
 											{link.label}
 										</a>

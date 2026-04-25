@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Icon } from '@steeze-ui/svelte-icon';
 	import { ArrowDown } from '@steeze-ui/carbon-icons';
+	import { resolve } from '$app/paths';
 
 	const steps = [
 		{
@@ -76,7 +77,7 @@
 		}
 	];
 
-	const faqs: { q: string; a: string }[] = [
+	/* const faqs: { q: string; a: string }[] = [
 		{
 			q: 'How does fair-use bandwidth work?',
 			a: 'Your server is connected to a 1 Gbps port. "Fair-use" means there\'s no hard monthly cap — we don\'t meter per-GB. We expect reasonable usage; running a public torrent seed box for months on end is not that.'
@@ -109,7 +110,7 @@
 			q: "What's the cancellation policy?",
 			a: 'Cancel anytime, no long-term contracts. We prorate to the day. No cancellation fees, no "retention specialist" to guilt-trip you through.'
 		}
-	];
+	]; */
 </script>
 
 <svelte:head>
@@ -141,37 +142,37 @@
 </svelte:head>
 
 <!-- ─── Hero ──────────────────────────────────────────────────────── -->
-<div class="relative isolate overflow-hidden border-b border-fyra-gray-800 px-6 pt-14 lg:px-8">
+<div class="px-6 pt-14 lg:px-8 relative isolate overflow-hidden border-b border-fyra-gray-800">
 	<div
 		aria-hidden="true"
-		class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+		class="inset-x-0 -top-40 blur-3xl sm:-top-80 absolute -z-10 transform-gpu overflow-hidden"
 	>
 		<div
 			style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
-			class="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-fyra-red-950 to-fyra-red-700 opacity-25 sm:left-[calc(50%-30rem)] sm:w-288.75"
+			class="w-144.5 sm:left-[calc(50%-30rem)] sm:w-288.75 relative left-[calc(50%-11rem)] aspect-1155/678 -translate-x-1/2 rotate-30 bg-linear-to-tr from-fyra-red-950 to-fyra-red-700 opacity-25"
 		></div>
 	</div>
 
-	<div class="mx-auto max-w-4xl py-24 text-center sm:py-32">
+	<div class="max-w-4xl py-24 sm:py-32 mx-auto text-center">
 		<h1
-			class="mb-2 text-4xl font-semibold tracking-tight text-balance text-fyra-gray-50 sm:text-6xl"
+			class="mb-2 text-4xl font-semibold tracking-tight sm:text-6xl text-balance text-fyra-gray-50"
 		>
 			Documentation.
 		</h1>
-		<p class="mx-auto max-w-lg text-base text-fyra-gray-400 sm:text-lg/7">
+		<p class="max-w-lg text-base sm:text-lg/7 mx-auto text-fyra-gray-400">
 			Guides, references, and answers for getting your Stack VPS or colocation slot up and running.
 		</p>
-		<div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+		<div class="mt-8 gap-3 flex flex-wrap items-center justify-center">
 			<a
 				href="#quick-start"
-				class="inline-flex items-center gap-2 border border-fyra-red-500 bg-fyra-gray-800 px-5 py-2.5 text-sm font-medium text-fyra-gray-50 transition-colors duration-200 hover:border-fyra-red-500"
+				class="gap-2 px-5 py-2.5 text-sm font-medium inline-flex items-center border border-fyra-red-500 bg-fyra-gray-800 text-fyra-gray-50 transition-colors duration-200 hover:border-fyra-red-500"
 			>
 				Colocation quick start
 				<Icon src={ArrowDown} class="h-3.5 w-3.5" aria-hidden="true" />
 			</a>
 			<a
 				href="#guides"
-				class="inline-flex items-center gap-2 border border-fyra-gray-700 bg-fyra-gray-800 px-5 py-2.5 text-sm font-medium text-fyra-gray-50 transition-colors duration-200 hover:border-fyra-red-500"
+				class="gap-2 px-5 py-2.5 text-sm font-medium inline-flex items-center border border-fyra-gray-700 bg-fyra-gray-800 text-fyra-gray-50 transition-colors duration-200 hover:border-fyra-red-500"
 			>
 				Browse guides
 			</a>
@@ -180,11 +181,11 @@
 
 	<div
 		aria-hidden="true"
-		class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+		class="inset-x-0 blur-3xl sm:top-[calc(100%-30rem)] absolute top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden"
 	>
 		<div
 			style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
-			class="relative left-[calc(50%+3rem)] aspect-1155/678 w-144.5 -translate-x-1/2 bg-linear-to-tr from-fyra-red-950 to-fyra-red-700 opacity-25 sm:left-[calc(50%+36rem)] sm:w-288.75"
+			class="w-144.5 sm:left-[calc(50%+36rem)] sm:w-288.75 relative left-[calc(50%+3rem)] aspect-1155/678 -translate-x-1/2 bg-linear-to-tr from-fyra-red-950 to-fyra-red-700 opacity-25"
 		></div>
 	</div>
 
@@ -212,7 +213,7 @@
 
 <!-- ─── Quick start ──────────────────────────────────────────────────── -->
 <section id="quick-start" class="border-b border-fyra-gray-800">
-	<div class="border-b border-fyra-gray-800 px-6 py-8 md:px-10">
+	<div class="px-6 py-8 md:px-10 border-b border-fyra-gray-800">
 		<h2 class="text-2xl font-semibold tracking-tight text-fyra-gray-50">Colocation quick start.</h2>
 		<p class="mt-2 text-sm text-fyra-gray-400">
 			From shipping a server to a running server in just four steps.
@@ -220,12 +221,12 @@
 	</div>
 
 	<div
-		class="grid grid-cols-1 divide-y divide-fyra-gray-800 lg:grid-cols-2 lg:divide-x lg:divide-y-0"
+		class="lg:grid-cols-2 lg:divide-x lg:divide-y-0 grid grid-cols-1 divide-y divide-fyra-gray-800"
 	>
-		{#each steps as step, i}
+		{#each steps as step, i (step.n)}
 			<div class="px-6 py-8 md:px-10 {i >= 2 ? 'lg:border-t lg:border-fyra-gray-800' : ''}">
-				<div class="flex items-start gap-4">
-					<span class="mt-0.5 shrink-0 font-mono text-xs font-medium text-fyra-red-500"
+				<div class="gap-4 flex items-start">
+					<span class="mt-0.5 font-mono text-xs font-medium shrink-0 text-fyra-red-500"
 						>{step.n}</span
 					>
 					<div class="flex-1">
@@ -233,14 +234,14 @@
 						<p class="mt-1.5 text-sm leading-relaxed text-fyra-gray-400">{step.body}</p>
 						{#if step.code}
 							<pre
-								class="mt-4 overflow-x-auto border border-fyra-gray-700 bg-fyra-gray-950 px-4 py-3 font-mono text-sm text-fyra-gray-200"><span
+								class="mt-4 px-4 py-3 font-mono text-sm overflow-x-auto border border-fyra-gray-700 bg-fyra-gray-950 text-fyra-gray-200"><span
 									class="text-fyra-gray-600 select-none"
 									>$ </span>{step.code}</pre>
 						{/if}
 						{#if step.cta}
 							<a
-								href={step.cta.href}
-								class="mt-4 inline-block text-sm font-medium text-fyra-red-400 transition-colors duration-100 hover:text-fyra-red-300"
+								href={resolve(step.cta.href)}
+								class="mt-4 text-sm font-medium inline-block text-fyra-red-400 transition-colors duration-100 hover:text-fyra-red-300"
 								>{step.cta.label}</a
 							>
 						{/if}
@@ -253,32 +254,32 @@
 
 <!-- ─── Guides ───────────────────────────────────────────────────────── -->
 <section id="guides" class="">
-	<div class="border-b border-fyra-gray-800 px-6 py-8 md:px-10">
+	<div class="px-6 py-8 md:px-10 border-b border-fyra-gray-800">
 		<h2 class="text-2xl font-semibold tracking-tight text-fyra-gray-50">Guides.</h2>
 		<p class="mt-2 text-sm text-fyra-gray-400">
 			In-depth documentation by topic. More being written as we launch.
 		</p>
 	</div>
 
-	<div class="grid grid-cols-1 gap-px bg-fyra-gray-800 sm:grid-cols-2 lg:grid-cols-4">
-		{#each guides as guide}
-			<div class="bg-fyra-gray-900 p-6">
-				<p class="text-[11px] font-medium tracking-widest text-fyra-gray-400 uppercase">
+	<div class="sm:grid-cols-2 lg:grid-cols-4 grid grid-cols-1 gap-px bg-fyra-gray-800">
+		{#each guides as guide (guide.category)}
+			<div class="p-6 bg-fyra-gray-900">
+				<p class="font-medium tracking-widest text-[11px] text-fyra-gray-400 uppercase">
 					{guide.category}
 				</p>
 				<p class="mt-2 text-sm leading-relaxed text-fyra-gray-400">{guide.description}</p>
-				<ul class="mt-5 flex flex-col gap-2">
-					{#each guide.articles as article}
-						<li class="flex items-center justify-between gap-2">
+				<ul class="mt-5 gap-2 flex flex-col">
+					{#each guide.articles as article (article.label)}
+						<li class="gap-2 flex items-center justify-between">
 							{#if article.soon}
 								<span class="text-sm text-fyra-gray-400">{article.label}</span>
 								<span
-									class="shrink-0 text-[10px] font-medium tracking-widest text-fyra-gray-400 uppercase"
+									class="font-medium tracking-widest shrink-0 text-[10px] text-fyra-gray-400 uppercase"
 									>Soon</span
 								>
 							{:else}
 								<a
-									href={article.href ?? '#'}
+									href={article.href ? resolve(article.href) : '#'}
 									class="text-sm text-fyra-gray-300 transition-colors duration-100 hover:text-fyra-gray-50"
 									>{article.label}</a
 								>

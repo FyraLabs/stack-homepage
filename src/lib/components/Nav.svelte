@@ -59,10 +59,10 @@
 	}}
 />
 
-<header class="sticky top-0 z-50 bg-fyra-gray-900 backdrop-blur-sm">
+<header class="top-0 backdrop-blur-sm sticky z-50 bg-fyra-gray-900">
 	<a
-		href="/services/colocation"
-		class="flex items-center justify-center gap-2 bg-fyra-red-600 px-4 py-2.5 text-center text-sm font-medium text-fyra-gray-50 transition-colors hover:bg-fyra-red-600"
+		href={resolve('/services/colocation')}
+		class="gap-2 px-4 py-2.5 text-sm font-medium flex items-center justify-center bg-fyra-red-600 text-center text-fyra-gray-50 transition-colors hover:bg-fyra-red-600"
 	>
 		<span class="font-semibold">Colocation is here.</span>
 		<!-- <span class="text-fyra-red-200"
@@ -74,27 +74,27 @@
 		>
 		<span class="text-fyra-red-300">→</span>
 	</a>
-	<div class="mx-auto max-w-6xl">
+	<div class="max-w-6xl mx-auto">
 		<div
-			class="flex h-12 items-center justify-between gap-4 border-x border-b border-fyra-gray-800 px-4"
+			class="h-12 gap-4 px-4 flex items-center justify-between border-x border-b border-fyra-gray-800"
 		>
 			<!-- Logo -->
 			<a
 				href={resolve('/')}
-				class="flex shrink-0 items-center gap-1.5 rounded-xs px-1 py-1 transition-colors duration-100 hover:bg-fyra-gray-800"
+				class="gap-1.5 rounded-xs px-1 py-1 flex shrink-0 items-center transition-colors duration-100 hover:bg-fyra-gray-800"
 			>
 				<img src="/logo.svg" alt="Fyra Stack" class="h-5 w-5" />
 				<span class="text-base font-semibold tracking-tight text-fyra-gray-50">Stack</span>
 			</a>
 
 			<!-- Center nav -->
-			<nav class="hidden items-center md:flex" aria-label="Main">
+			<nav class="md:flex hidden items-center" aria-label="Main">
 				<!-- Services dropdown -->
 				<div class="relative">
 					<button
 						type="button"
 						onclick={() => toggleDropdown('services')}
-						class="flex items-center gap-1 rounded-xs px-2.5 py-1.5 text-[13px] transition-colors duration-100
+						class="gap-1 rounded-xs px-2.5 py-1.5 flex items-center text-[13px] transition-colors duration-100
 							{openDropdown === 'services'
 							? 'bg-fyra-gray-800 text-fyra-gray-50'
 							: 'text-fyra-gray-200 hover:bg-fyra-gray-800 hover:text-fyra-gray-100'}"
@@ -103,7 +103,7 @@
 						Services
 						<Icon
 							src={ChevronDown}
-							class="mt-px h-2.5 w-2.5 shrink-0 text-fyra-gray-400 transition-transform duration-150 {openDropdown ===
+							class="h-2.5 w-2.5 mt-px shrink-0 text-fyra-gray-400 transition-transform duration-150 {openDropdown ===
 							'services'
 								? 'rotate-180'
 								: ''}"
@@ -114,15 +114,15 @@
 					{#if openDropdown === 'services'}
 						<div
 							transition:fade={{ duration: 100 }}
-							class="absolute top-full right-0 mt-2.5 w-64 overflow-hidden rounded-xs border border-fyra-gray-800 bg-fyra-gray-900 shadow-sm shadow-fyra-gray-950/80"
+							class="right-0 mt-2.5 w-64 rounded-xs shadow-sm absolute top-full overflow-hidden border border-fyra-gray-800 bg-fyra-gray-900 shadow-fyra-gray-950/80"
 						>
 							{#each servicesItems as item (item.href)}
 								<a
 									href={resolve(item.href as InternalHref)}
 									onclick={closeAll}
-									class="flex flex-col gap-0.5 px-3.5 py-3 transition-colors duration-100 hover:bg-fyra-gray-800"
+									class="gap-0.5 px-3.5 py-3 flex flex-col transition-colors duration-100 hover:bg-fyra-gray-800"
 								>
-									<span class="text-[13px] font-medium text-fyra-gray-100">{item.label}</span>
+									<span class="font-medium text-[13px] text-fyra-gray-100">{item.label}</span>
 									<span class="text-[12px] text-fyra-gray-300">{item.description}</span>
 								</a>
 							{/each}
@@ -143,7 +143,7 @@
 					<button
 						type="button"
 						onclick={() => toggleDropdown('about')}
-						class="flex items-center gap-1 rounded-xs px-2.5 py-1.5 text-[13px] transition-colors duration-100
+						class="gap-1 rounded-xs px-2.5 py-1.5 flex items-center text-[13px] transition-colors duration-100
 							{openDropdown === 'about'
 							? 'bg-fyra-gray-800 text-fyra-gray-50'
 							: 'text-fyra-gray-200 hover:bg-fyra-gray-800 hover:text-fyra-gray-100'}"
@@ -152,7 +152,7 @@
 						About
 						<Icon
 							src={ChevronDown}
-							class="mt-px h-2.5 w-2.5 shrink-0 text-fyra-gray-400 transition-transform duration-150 {openDropdown ===
+							class="h-2.5 w-2.5 mt-px shrink-0 text-fyra-gray-400 transition-transform duration-150 {openDropdown ===
 							'about'
 								? 'rotate-180'
 								: ''}"
@@ -163,16 +163,16 @@
 					{#if openDropdown === 'about'}
 						<div
 							transition:fade={{ duration: 100 }}
-							class="absolute top-full right-0 mt-2.5 w-56 overflow-hidden rounded-xs border border-fyra-gray-800 bg-fyra-gray-900 shadow-sm shadow-fyra-gray-950/80"
+							class="right-0 mt-2.5 w-56 rounded-xs shadow-sm absolute top-full overflow-hidden border border-fyra-gray-800 bg-fyra-gray-900 shadow-fyra-gray-950/80"
 						>
 							{#each aboutItems as item (item.href)}
 								{#if item.href.startsWith('/')}
 									<a
 										href={resolve(item.href as InternalHref)}
 										onclick={closeAll}
-										class="flex flex-col gap-0.5 px-3.5 py-3 transition-colors duration-100 hover:bg-fyra-gray-800"
+										class="gap-0.5 px-3.5 py-3 flex flex-col transition-colors duration-100 hover:bg-fyra-gray-800"
 									>
-										<span class="text-[13px] font-medium text-fyra-gray-100">{item.label}</span>
+										<span class="font-medium text-[13px] text-fyra-gray-100">{item.label}</span>
 										<span class="text-[12px] text-fyra-gray-300">{item.description}</span>
 									</a>
 								{:else}
@@ -180,9 +180,9 @@
 										href={item.href}
 										onclick={closeAll}
 										rel="external"
-										class="flex flex-col gap-0.5 px-3.5 py-3 transition-colors duration-100 hover:bg-fyra-gray-800"
+										class="gap-0.5 px-3.5 py-3 flex flex-col transition-colors duration-100 hover:bg-fyra-gray-800"
 									>
-										<span class="text-[13px] font-medium text-fyra-gray-100">{item.label}</span>
+										<span class="font-medium text-[13px] text-fyra-gray-100">{item.label}</span>
 										<span class="text-[12px] text-fyra-gray-300">{item.description}</span>
 									</a>
 								{/if}
@@ -193,7 +193,7 @@
 			</nav>
 
 			<!-- Right side -->
-			<div class="flex items-center gap-1 md:hidden">
+			<div class="gap-1 md:hidden flex items-center">
 				<!-- CTA -->
 
 				<!-- Mobile menu toggle -->
@@ -203,7 +203,7 @@
 						isMobileMenuOpen = !isMobileMenuOpen;
 						openDropdown = null;
 					}}
-					class="flex items-center justify-center rounded-xs p-1.5 text-fyra-gray-200 transition-colors duration-100 hover:bg-fyra-gray-800 hover:text-fyra-gray-100 md:hidden"
+					class="rounded-xs p-1.5 md:hidden flex items-center justify-center text-fyra-gray-200 transition-colors duration-100 hover:bg-fyra-gray-800 hover:text-fyra-gray-100"
 					aria-label="Open menu"
 				>
 					{#if isMobileMenuOpen}
@@ -221,7 +221,7 @@
 {#if isMobileMenuOpen}
 	<div
 		transition:fade={{ duration: 120 }}
-		class="fixed inset-0 top-11 z-40 bg-fyra-gray-950/50 md:hidden"
+		class="inset-0 top-11 md:hidden fixed z-40 bg-fyra-gray-950/50"
 		role="button"
 		tabindex="0"
 		onclick={() => {
@@ -234,10 +234,10 @@
 
 	<div
 		transition:slide={{ duration: 300, axis: 'y' }}
-		class="fixed inset-x-0 top-11 z-50 border-y border-fyra-gray-800 bg-fyra-gray-900 px-4 py-3 md:hidden"
+		class="inset-x-0 top-11 px-4 py-3 md:hidden fixed z-50 border-y border-fyra-gray-800 bg-fyra-gray-900"
 	>
-		<div class="flex flex-col gap-0.5">
-			<p class="px-3 pt-1 pb-0.5 text-[11px] font-medium text-fyra-gray-400 uppercase">Services</p>
+		<div class="gap-0.5 flex flex-col">
+			<p class="px-3 pt-1 pb-0.5 font-medium text-[11px] text-fyra-gray-400 uppercase">Services</p>
 			{#each servicesItems as item (item.href)}
 				<a
 					href={resolve(item.href as InternalHref)}
@@ -255,7 +255,7 @@
 
 			<div class="my-1.5 border-t border-fyra-gray-800"></div>
 
-			<p class="px-3 pt-1 pb-0.5 text-[11px] font-medium text-fyra-gray-400 uppercase">About</p>
+			<p class="px-3 pt-1 pb-0.5 font-medium text-[11px] text-fyra-gray-400 uppercase">About</p>
 			{#each aboutItems as item (item.href)}
 				{#if item.href.startsWith('/')}
 					<a
