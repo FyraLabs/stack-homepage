@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { resolve } from '$app/paths';
 	import { Icon } from '@steeze-ui/svelte-icon';
 	import { Checkmark } from '@steeze-ui/carbon-icons';
