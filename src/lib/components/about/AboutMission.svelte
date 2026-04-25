@@ -1,8 +1,8 @@
 <!-- Mission / story -->
 <section class="border-b border-fyra-gray-800">
 	<!-- Header -->
-	<div class="border-b border-fyra-gray-800 px-6 py-8 md:px-10">
-		<h2 class="text-3xl font-semibold tracking-tight text-fyra-gray-50 md:text-4xl">
+	<div class="px-6 py-8 md:px-10 border-b border-fyra-gray-800">
+		<h2 class="text-3xl font-semibold tracking-tight md:text-4xl text-fyra-gray-50">
 			Why we exist.
 		</h2>
 		<p class="mt-2 text-sm text-fyra-gray-400">The honest version, not the marketing one.</p>
@@ -10,7 +10,7 @@
 
 	<!-- Two-column story -->
 	<div
-		class="grid grid-cols-1 divide-y divide-fyra-gray-800 lg:grid-cols-2 lg:divide-x lg:divide-y-0"
+		class="lg:grid-cols-2 lg:divide-x lg:divide-y-0 grid grid-cols-1 divide-y divide-fyra-gray-800"
 	>
 		<div class="px-6 py-10 md:px-10">
 			<p class="text-base leading-relaxed text-fyra-gray-300">
@@ -39,7 +39,7 @@
 				href="https://github.com/FyraLabs"
 				target="_blank"
 				rel="noopener noreferrer"
-				class="mt-6 inline-flex text-sm font-medium text-fyra-red-400 transition-colors duration-100 hover:text-fyra-red-300"
+				class="mt-6 text-sm font-medium inline-flex text-fyra-red-400 transition-colors duration-100 hover:text-fyra-red-300"
 			>
 				Fyra Labs on GitHub <span aria-hidden="true" class="ml-1">→</span>
 			</a>

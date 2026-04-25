@@ -8,20 +8,20 @@
 	);
 </script>
 
-<div class="border-b border-fyra-gray-800 px-6 py-8 md:px-10">
-	<h2 class="text-3xl font-semibold tracking-tight text-fyra-gray-50 md:text-4xl">
+<div class="px-6 py-8 md:px-10 border-b border-fyra-gray-800">
+	<h2 class="text-3xl font-semibold tracking-tight md:text-4xl text-fyra-gray-50">
 		Priced fairly.
 	</h2>
 	<p class="mt-2 text-sm text-fyra-gray-400">Simple, flat-rate plans with no surprise fees.</p>
 </div>
 <div class="grid grid-cols-7">
-	<div class="col-span-7 flex flex-col justify-between border-b border-fyra-gray-800 p-5">
+	<div class="p-5 col-span-7 flex flex-col justify-between border-b border-fyra-gray-800">
 		<!-- top -->
 		<div class="flex min-w-full items-center justify-between">
 			<h2 class="text-xl font-semibold tracking-wide lg:text-2xl">
 				{currentPlan.name}
 			</h2>
-			<div class="flex items-center gap-3">
+			<div class="gap-3 flex items-center">
 				<div class="text-right">
 					<h3 class="text-xl font-semibold tracking-tight lg:text-2xl">
 						{#if currentPlan.originalPrice}
@@ -36,7 +36,7 @@
 				</div>
 				{#if currentPlan.originalPrice}
 					<span
-						class="rounded-full bg-fyra-red-500/10 px-2.5 py-1 text-xs font-medium text-fyra-red-400"
+						class="px-2.5 py-1 text-xs font-medium rounded-full bg-fyra-red-500/10 text-fyra-red-400"
 						>Limited time</span
 					>
 				{/if}
@@ -44,7 +44,7 @@
 		</div>
 		<!-- middle -->
 		<div
-			class="mt-8 grid grid-cols-1 gap-x-8 gap-y-1.5 text-base md:grid-cols-2 md:gap-y-3.5 lg:mt-16 lg:text-[1.05rem]"
+			class="mt-8 gap-x-8 gap-y-1.5 text-base md:grid-cols-2 md:gap-y-3.5 lg:mt-16 lg:text-[1.05rem] grid grid-cols-1"
 		>
 			<div class="flex justify-between">
 				<p class="text-fyra-gray-400">Rack Units</p>
@@ -66,17 +66,17 @@
 	</div>
 </div>
 
-<div class="grid grid-cols-2 divide-x divide-y divide-fyra-gray-800 lg:grid-cols-3">
+<div class="lg:grid-cols-3 grid grid-cols-2 divide-x divide-y divide-fyra-gray-800">
 	{#each colocationPlans as plan, i (plan.name)}
 		<button
 			onclick={() => (selectedPlanName = plan.name)}
-			class="col-span-1 w-full p-4 text-left duration-200 {selectedPlanName === plan.name
+			class="p-4 col-span-1 w-full text-left duration-200 {selectedPlanName === plan.name
 				? 'bg-fyra-gray-800'
 				: 'bg-fyra-gray-900 hover:bg-fyra-gray-800'} {i === colocationPlans.length - 1
 				? 'border-b border-fyra-gray-800'
 				: ''}"
 		>
-			<div class="flex items-start justify-between gap-4">
+			<div class="gap-4 flex items-start justify-between">
 				<h4 class="text-base/5 font-medium md:text-[1.1rem]/6">{plan.name}</h4>
 				<div class="text-right">
 					<h3 class="text-sm font-medium tracking-tighter lg:text-base">
@@ -91,7 +91,7 @@
 					</h3>
 				</div>
 			</div>
-			<div class="mt-4 text-left md:mt-6">
+			<div class="mt-4 md:mt-6 text-left">
 				<p class="text-xs text-fyra-gray-400">
 					{plan.units}U
 					<span class="px-0.5 text-fyra-red-500">•</span>
@@ -104,7 +104,7 @@
 	{/each}
 </div>
 
-<div class="border-b border-fyra-gray-800 px-5 py-3 text-center">
+<div class="px-5 py-3 border-b border-fyra-gray-800 text-center">
 	<p class="text-xs text-fyra-gray-400">
 		Need something custom?
 		<a

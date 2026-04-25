@@ -5,10 +5,10 @@
 
 <section class="border-b border-fyra-gray-800">
 	<div
-		class="grid grid-cols-1 divide-y divide-fyra-gray-800 lg:grid-cols-2 lg:divide-x lg:divide-y-0"
+		class="lg:grid-cols-2 lg:divide-x lg:divide-y-0 grid grid-cols-1 divide-y divide-fyra-gray-800"
 	>
 		<!-- Left: headline -->
-		<div class="flex flex-col justify-center px-8 py-12 lg:px-10 lg:py-16">
+		<div class="px-8 py-12 lg:px-10 lg:py-16 flex flex-col justify-center">
 			<h2 class="text-4xl leading-tight font-semibold tracking-tight text-fyra-gray-50">
 				Open all the way down.
 			</h2>
@@ -28,10 +28,10 @@
 		<!-- Right: bento grid -->
 		<div class="grid grid-cols-2 gap-px bg-fyra-gray-800">
 			<!-- DeepComputing partnership — full width -->
-			<div class="relative col-span-2 overflow-hidden bg-fyra-gray-900 p-8">
-				<div class="relative flex items-start justify-between gap-4">
+			<div class="p-8 relative col-span-2 overflow-hidden bg-fyra-gray-900">
+				<div class="gap-4 relative flex items-start justify-between">
 					<div>
-						<p class="text-[11px] font-medium tracking-widest text-fyra-gray-600 uppercase">
+						<p class="font-medium tracking-widest text-[11px] text-fyra-gray-600 uppercase">
 							Hardware partner
 						</p>
 						<p class="mt-2 text-lg font-semibold text-fyra-gray-50">DeepComputing</p>
@@ -43,14 +43,14 @@
 							href="https://deepcomputing.io"
 							target="_blank"
 							rel="noopener noreferrer"
-							class="mt-4 inline-block text-sm font-medium text-fyra-red-400 transition-colors duration-100 hover:text-fyra-red-300"
+							class="mt-4 text-sm font-medium inline-block text-fyra-red-400 transition-colors duration-100 hover:text-fyra-red-300"
 						>
 							deepcomputing.io →
 						</a>
 					</div>
 					<!-- DC logo placeholder — replace with actual logo if available -->
 					<div
-						class="hidden h-12 w-12 shrink-0 items-center justify-center border border-fyra-gray-800 bg-fyra-gray-800 text-fyra-gray-600 sm:flex"
+						class="h-12 w-12 sm:flex hidden shrink-0 items-center justify-center border border-fyra-gray-800 bg-fyra-gray-800 text-fyra-gray-600"
 					>
 						<Icon src={DataCenter} class="h-6 w-6" aria-hidden="true" />
 					</div>
@@ -58,7 +58,7 @@
 			</div>
 
 			<!-- Open ISA -->
-			<div class="bg-fyra-gray-900 p-8">
+			<div class="p-8 bg-fyra-gray-900">
 				<p class="text-lg leading-snug font-semibold text-fyra-gray-50">Open ISA</p>
 				<p class="mt-1.5 text-sm leading-relaxed text-fyra-gray-400">
 					RISC-V is fully open — no royalties, no NDAs, no architecture secrets.
@@ -66,7 +66,7 @@
 			</div>
 
 			<!-- Linux native -->
-			<div class="bg-fyra-gray-900 p-8">
+			<div class="p-8 bg-fyra-gray-900">
 				<p class="text-lg font-semibold text-fyra-gray-50">Linux native</p>
 				<p class="mt-1.5 text-sm leading-relaxed text-fyra-gray-400">
 					Run Ultramarine, Debian, or any RISC-V Linux distro. Full root access.
@@ -74,7 +74,7 @@
 			</div>
 
 			<!-- Real support -->
-			<div class="bg-fyra-gray-900 p-8">
+			<div class="p-8 bg-fyra-gray-900">
 				<p class="text-lg font-semibold text-fyra-gray-50">Real support</p>
 				<p class="mt-1.5 text-sm leading-relaxed text-fyra-gray-400">
 					By the engineers that maintain the hardware — not a ticket queue.
@@ -82,7 +82,7 @@
 			</div>
 
 			<!-- Honest pricing -->
-			<div class="bg-fyra-gray-900 p-8">
+			<div class="p-8 bg-fyra-gray-900">
 				<p class="text-lg font-semibold text-fyra-gray-50">Honest pricing</p>
 				<p class="mt-1.5 text-sm leading-relaxed text-fyra-gray-400">
 					No hidden fees, no egress charges, no surprise bills. Flat rate.

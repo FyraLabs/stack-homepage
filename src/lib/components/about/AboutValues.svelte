@@ -30,17 +30,17 @@
 <!-- Values -->
 <section class="border-b border-fyra-gray-800">
 	<!-- Header -->
-	<div class="border-b border-fyra-gray-800 px-6 py-8 md:px-10">
-		<h2 class="text-3xl font-semibold tracking-tight text-fyra-gray-50 md:text-4xl">
+	<div class="px-6 py-8 md:px-10 border-b border-fyra-gray-800">
+		<h2 class="text-3xl font-semibold tracking-tight md:text-4xl text-fyra-gray-50">
 			What we believe.
 		</h2>
 		<p class="mt-2 text-sm text-fyra-gray-400">The principles we actually operate by.</p>
 	</div>
 
 	<!-- Value cards -->
-	<div class="grid grid-cols-1 gap-px bg-fyra-gray-800 sm:grid-cols-2 lg:grid-cols-3">
+	<div class="sm:grid-cols-2 lg:grid-cols-3 grid grid-cols-1 gap-px bg-fyra-gray-800">
 		{#each values as value (value.label)}
-			<div class="bg-fyra-gray-900 px-6 py-8 md:px-10">
+			<div class="px-6 py-8 md:px-10 bg-fyra-gray-900">
 				<p class="text-sm font-semibold text-fyra-gray-50">
 					<span class="mr-1.5 text-fyra-red-500" aria-hidden="true">·</span>{value.label}.
 				</p>

@@ -85,7 +85,7 @@
 {#if toast}
 	<div
 		transition:fly={{ y: 16, duration: 200 }}
-		class="fixed right-6 bottom-6 z-50 flex w-80 items-start gap-3 border border-fyra-gray-700 bg-fyra-gray-900 px-4 py-4 shadow-xl"
+		class="right-6 bottom-6 w-80 gap-3 px-4 py-4 shadow-xl fixed z-50 flex items-start border border-fyra-gray-700 bg-fyra-gray-900"
 	>
 		{#if toast.type === 'success'}
 			<svg
@@ -144,8 +144,8 @@
 	<div>
 		<!-- Form -->
 		<div>
-			<div class="border-b border-fyra-gray-800 px-6 py-8 md:px-10">
-				<h2 class="text-3xl font-semibold tracking-tight text-fyra-gray-50 md:text-4xl">
+			<div class="px-6 py-8 md:px-10 border-b border-fyra-gray-800">
+				<h2 class="text-3xl font-semibold tracking-tight md:text-4xl text-fyra-gray-50">
 					{serviceType === 'colocation' ? 'Sign up for colocation.' : 'Pre-reserve your VPS.'}
 				</h2>
 				<p class="mt-2 text-sm text-fyra-gray-400">
@@ -156,11 +156,11 @@
 			</div>
 
 			<div class="px-6 py-8 md:px-10">
-				<form {...reservationForm} class="flex flex-col gap-6">
+				<form {...reservationForm} class="gap-6 flex flex-col">
 					<input type="hidden" name="plan" value={plan} />
 
 					<!-- Plan -->
-					<div class="flex flex-col gap-2">
+					<div class="gap-2 flex flex-col">
 						<span class={labelClass}>Plan</span>
 						<div class="relative" bind:this={planDropdownEl}>
 							<button
@@ -169,7 +169,7 @@
 									if (!submitted) planDropdownOpen = !planDropdownOpen;
 								}}
 								disabled={submitted}
-								class="flex w-full items-center justify-between border border-fyra-gray-700 bg-fyra-gray-800 px-3 py-2.5 text-left text-sm text-fyra-gray-100 transition-colors duration-100 focus:border-fyra-gray-500 focus:outline-none disabled:cursor-not-allowed disabled:opacity-40 {planDropdownOpen
+								class="px-3 py-2.5 text-sm flex w-full items-center justify-between border border-fyra-gray-700 bg-fyra-gray-800 text-left text-fyra-gray-100 transition-colors duration-100 focus:border-fyra-gray-500 focus:outline-none disabled:cursor-not-allowed disabled:opacity-40 {planDropdownOpen
 									? 'border-fyra-gray-500'
 									: ''}"
 								aria-haspopup="listbox"
@@ -210,7 +210,7 @@
 							{#if planDropdownOpen}
 								<ul
 									role="listbox"
-									class="absolute top-full right-0 left-0 z-20 mt-px max-h-64 overflow-y-auto border border-fyra-gray-700 bg-fyra-gray-800"
+									class="right-0 left-0 max-h-64 absolute top-full z-20 mt-px overflow-y-auto border border-fyra-gray-700 bg-fyra-gray-800"
 								>
 									{#if serviceType === 'colocation'}
 										{#each colocationPlans as p (p.name)}
@@ -221,7 +221,7 @@
 														plan = p.name;
 														planDropdownOpen = false;
 													}}
-													class="w-full px-3 py-2.5 text-left text-sm transition-colors duration-100 {plan ===
+													class="px-3 py-2.5 text-sm w-full text-left transition-colors duration-100 {plan ===
 													p.name
 														? 'bg-fyra-gray-700 text-fyra-gray-50'
 														: 'text-fyra-gray-300 hover:bg-fyra-gray-700/60 hover:text-fyra-gray-100'}"
@@ -239,7 +239,7 @@
 														plan = p.name;
 														planDropdownOpen = false;
 													}}
-													class="w-full px-3 py-2.5 text-left text-sm transition-colors duration-100 {plan ===
+													class="px-3 py-2.5 text-sm w-full text-left transition-colors duration-100 {plan ===
 													p.name
 														? 'bg-fyra-gray-700 text-fyra-gray-50'
 														: 'text-fyra-gray-300 hover:bg-fyra-gray-700/60 hover:text-fyra-gray-100'}"
@@ -259,8 +259,8 @@
 					</div>
 
 					<!-- Name + Email -->
-					<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-						<div class="flex flex-col gap-2">
+					<div class="gap-6 md:grid-cols-2 grid grid-cols-1">
+						<div class="gap-2 flex flex-col">
 							<label for="name" class={labelClass}>
 								Full Name<span class="tracking-normal text-fyra-red-500 normal-case">*</span>
 							</label>
@@ -278,7 +278,7 @@
 								<p class={issueClass}>{reservationForm.fields.name.issues()?.[0]?.message}</p>
 							{/if}
 						</div>
-						<div class="flex flex-col gap-2">
+						<div class="gap-2 flex flex-col">
 							<label for="email" class={labelClass}>
 								Email Address<span class="tracking-normal text-fyra-red-500 normal-case">*</span>
 							</label>
@@ -299,8 +299,8 @@
 					</div>
 
 					<!-- Company + Current Provider -->
-					<div class="grid grid-cols-1 gap-6 md:grid-cols-2">
-						<div class="flex flex-col gap-2">
+					<div class="gap-6 md:grid-cols-2 grid grid-cols-1">
+						<div class="gap-2 flex flex-col">
 							<label for="company" class={labelClass}>Company</label>
 							<input
 								id="company"
@@ -312,7 +312,7 @@
 								class={inputClass}
 							/>
 						</div>
-						<div class="flex flex-col gap-2">
+						<div class="gap-2 flex flex-col">
 							<label for="provider" class={labelClass}
 								>{serviceType === 'colocation'
 									? 'Current Colo Provider'
@@ -333,7 +333,7 @@
 					</div>
 
 					<!-- Use Case -->
-					<div class="flex flex-col gap-2">
+					<div class="gap-2 flex flex-col">
 						<label for="usecase" class={labelClass}>Use Case</label>
 						<textarea
 							id="usecase"
@@ -351,7 +351,7 @@
 						<button
 							type="submit"
 							disabled={submitting || submitted}
-							class="w-fit border border-fyra-gray-700 bg-fyra-gray-800 px-5 py-2.5 text-sm font-medium text-fyra-gray-50 transition-colors duration-200 hover:border-fyra-red-500 disabled:cursor-not-allowed disabled:opacity-50"
+							class="px-5 py-2.5 text-sm font-medium w-fit border border-fyra-gray-700 bg-fyra-gray-800 text-fyra-gray-50 transition-colors duration-200 hover:border-fyra-red-500 disabled:cursor-not-allowed disabled:opacity-50"
 						>
 							{#if submitted}
 								Reservation submitted

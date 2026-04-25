@@ -1,10 +1,10 @@
 declare global {
-	namespace App {
-		interface Platform {
-			env: Env;
-			ctx: ExecutionContext;
-			caches: CacheStorage;
-			cf?: IncomingRequestCfProperties;
+	namespace app {
+		interface platform {
+			caches: cachestorage;
+			cf?: incomingrequestcfproperties;
+			ctx: executioncontext;
+			env: env;
 		}
 	}
 }

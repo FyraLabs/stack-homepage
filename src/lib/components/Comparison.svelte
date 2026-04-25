@@ -55,9 +55,9 @@
 
 <section class="border-b border-fyra-gray-800">
 	<!-- Header -->
-	<div class="border-b border-fyra-gray-800 px-6 py-8 md:px-10">
-		<div class="flex items-center gap-2.5">
-			<h2 class="text-3xl font-semibold tracking-tight text-fyra-gray-50 md:text-4xl">
+	<div class="px-6 py-8 md:px-10 border-b border-fyra-gray-800">
+		<div class="gap-2.5 flex items-center">
+			<h2 class="text-3xl font-semibold tracking-tight md:text-4xl text-fyra-gray-50">
 				Stack, well... stacks up.
 			</h2>
 		</div>
@@ -70,16 +70,16 @@
 			<!-- Column headers -->
 			<thead>
 				<tr class="border-b border-fyra-gray-800">
-					<th class="w-36 px-6 py-4 text-left md:w-44 md:px-10"></th>
+					<th class="w-36 px-6 py-4 md:w-44 md:px-10 text-left"></th>
 					<!-- Stack -->
 					<th class="px-5 py-4 text-left">
-						<div class="flex items-center gap-1.5">
+						<div class="gap-1.5 flex items-center">
 							<img src="/logo.svg" alt="" class="h-4 w-4" aria-hidden="true" />
 							<span class="text-sm font-semibold text-fyra-gray-50">Stack</span>
 						</div>
 					</th>
 					{#each competitors as name (name)}
-						<th class="px-5 py-4 text-left text-sm font-medium text-fyra-gray-400">{name}</th>
+						<th class="px-5 py-4 text-sm font-medium text-left text-fyra-gray-400">{name}</th>
 					{/each}
 				</tr>
 			</thead>
@@ -89,7 +89,7 @@
 				{#each rows as row (row.label)}
 					<tr>
 						<!-- Label -->
-						<td class="px-6 py-4 text-sm text-fyra-gray-400 md:px-10">{row.label}</td>
+						<td class="px-6 py-4 text-sm md:px-10 text-fyra-gray-400">{row.label}</td>
 						<!-- Stack value -->
 						<td class="px-5 py-4 text-sm font-semibold text-fyra-red-400">{row.stack}</td>
 						<!-- Competitor values -->
