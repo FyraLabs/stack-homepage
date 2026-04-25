@@ -22,7 +22,8 @@ export default {
 					'theme'
 				]
 			}
-		]
+		],
+		'import-notation': null
 	},
 	overrides: [
 		{
